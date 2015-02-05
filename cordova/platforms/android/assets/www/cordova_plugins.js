@@ -37,6 +37,13 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/org.apache.cordova.splashscreen/www/splashscreen.js",
+        "id": "org.apache.cordova.splashscreen.SplashScreen",
+        "clobbers": [
+            "navigator.splashscreen"
+        ]
+    },
+    {
         "file": "plugins/org.apache.cordova.network-information/www/network.js",
         "id": "org.apache.cordova.network-information.network",
         "clobbers": [
@@ -67,6 +74,7 @@ module.exports.metadata =
     "org.apache.cordova.vibration": "0.3.12",
     "de.appplant.cordova.plugin.local-notification": "0.7.8",
     "org.apache.cordova.geolocation": "0.3.11",
+    "org.apache.cordova.splashscreen": "0.3.5",
     "org.apache.cordova.network-information": "0.2.15-dev",
     "org.apache.cordova.device": "0.2.14-dev"
 }

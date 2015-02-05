@@ -56,14 +56,21 @@ function d(a){return!c(a)&&(/iPad/.test(a)||/Android|Silk/.test(a)||/(RIM Tablet
 break;case "android":f=/(Android|Silk)/.test(e);break;case "blackberry":f=/(BlackBerry|BB)/.test(e);break;case "safari":f=/Safari/.test(e)&&!/(BlackBerry|BB)/.test(e);break;case "chrome":f=/Chrome/.test(e);break;case "ie10":f=/MSIE 10/.test(e);break;case "windows":f=/MSIE 10/.test(e)||/Trident/.test(e);break;case "tizen":f=/Tizen/.test(e);break;case "firefox":f=/Firefox/.test(e)}if(f)return!0}return!1};a=0;for(h=d.length;a<h;a++){c=d[a];"string"!=typeof c&&(g=c.platform,j=c.exclude,n=c.theme,c=c.path);
 if(g){if(!k(g)||k(j))continue;b.theme||(b.theme={});b.theme.name||(b.theme.name=n||"Default")}document.write('\x3clink rel\x3d"stylesheet" href\x3d"'+c+'"\x3e')}a=0;for(h=m.length;a<h;a++)c=m[a],"string"!=typeof c&&(g=c.platform,j=c.exclude,c=c.path),(!g||k(g)&&!k(j))&&document.write('\x3cscript src\x3d"'+c+'"\x3e\x3c/script\x3e')}})(this);
 Ext.blink({id:"193c079c-3dc8-4d7c-bbac-93483879f5d4",js:[{path:"cordova.js",remote:!0},{path:"app.js",update:"delta"},{path:"resources/js/jquery-2.1.3.min.js"},{path:"http://maps.google.com/maps/api/js?sensor\x3dtrue"}],css:[{path:"resources/css/app.css",update:"delta"}]});</script>
+    <script type="text/javascript" charset="utf-8">
+
+     document.addEventListener('deviceready', function() {
+
+     setTimeout(function() {
+     navigator.splashscreen.hide();
+     }, 1000);
+     });
+</script>
+
+
     <script type="text/javascript" src="resources/js/jquery-2.1.3.min.js" ></script>
     <!--script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script-->
 </head>
 <body>
-    <div id="appLoadingIndicator">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+   
 </body>
 </html>

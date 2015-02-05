@@ -6,6 +6,7 @@
 /home/sstalker/github/remind/cordova/platforms/android/ant-build/classes/com/lura/Reminder/R$string.class \
 /home/sstalker/github/remind/cordova/platforms/android/ant-build/classes/com/lura/Reminder/R$xml.class \
 /home/sstalker/github/remind/cordova/platforms/android/ant-build/classes/com/lura/Reminder/CordovaApp.class \
+/home/sstalker/github/remind/cordova/platforms/android/ant-build/classes/org/apache/cordova/splashscreen/SplashScreen.class \
 /home/sstalker/github/remind/cordova/platforms/android/ant-build/classes/org/apache/cordova/device/Device.class \
 /home/sstalker/github/remind/cordova/platforms/android/ant-build/classes/org/apache/cordova/networkinformation/NetworkManager.class \
 /home/sstalker/github/remind/cordova/platforms/android/ant-build/classes/org/apache/cordova/networkinformation/NetworkManager$1.class \

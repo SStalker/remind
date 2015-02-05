@@ -68,6 +68,7 @@ Ext.define('Reminder.view.WifiEditor', {
 			items: {
 				xtype: 'selectfield',
 				label: 'SSID',
+				labelAlign: 'top',
 				name: 'ssid',
 				itemId: 'ssid',
 				displayField: 'ssid',
@@ -86,6 +87,7 @@ Ext.define('Reminder.view.WifiEditor', {
 			items: {
 				xtype: 'selectfield',
 				label: 'MAC',
+				labelAlign: 'top',
 				name: 'mac',
 				itemId: 'mac',
 				displayField: 'mac',

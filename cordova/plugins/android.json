@@ -31,6 +31,10 @@
                         {
                             "xml": "<feature name=\"LocalNotification\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.localnotification.LocalNotification\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -101,6 +105,9 @@
             "PACKAGE_NAME": "com.lura.Reminder"
         },
         "org.apache.cordova.geolocation": {
+            "PACKAGE_NAME": "com.lura.Reminder"
+        },
+        "org.apache.cordova.splashscreen": {
             "PACKAGE_NAME": "com.lura.Reminder"
         }
     },

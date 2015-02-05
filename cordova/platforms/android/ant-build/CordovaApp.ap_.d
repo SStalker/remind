@@ -1,24 +1,8 @@
 /home/sstalker/github/remind/cordova/platforms/android/ant-build/CordovaApp.ap_ \
  : /home/sstalker/github/remind/cordova/platforms/android/res/values/strings.xml \
-/home/sstalker/github/remind/cordova/platforms/android/res/drawable-port-hdpi/screen.png \
-/home/sstalker/github/remind/cordova/platforms/android/res/drawable-land-mdpi/screen.png \
-/home/sstalker/github/remind/cordova/platforms/android/res/drawable-land-xhdpi/screen.png \
-/home/sstalker/github/remind/cordova/platforms/android/res/drawable-port-mdpi/screen.png \
 /home/sstalker/github/remind/cordova/platforms/android/res/xml/config.xml \
 /home/sstalker/github/remind/cordova/platforms/android/res/drawable/icon.png \
-/home/sstalker/github/remind/cordova/platforms/android/res/drawable-land-hdpi/screen.png \
-/home/sstalker/github/remind/cordova/platforms/android/res/drawable-port-xhdpi/screen.png \
-/home/sstalker/github/remind/cordova/platforms/android/res/drawable-port-ldpi/screen.png \
-/home/sstalker/github/remind/cordova/platforms/android/res/drawable-land-ldpi/screen.png \
-/home/sstalker/github/remind/cordova/platforms/android/ant-build/res/drawable-port-hdpi/screen.png \
-/home/sstalker/github/remind/cordova/platforms/android/ant-build/res/drawable-land-mdpi/screen.png \
-/home/sstalker/github/remind/cordova/platforms/android/ant-build/res/drawable-land-xhdpi/screen.png \
-/home/sstalker/github/remind/cordova/platforms/android/ant-build/res/drawable-port-mdpi/screen.png \
 /home/sstalker/github/remind/cordova/platforms/android/ant-build/res/drawable/icon.png \
-/home/sstalker/github/remind/cordova/platforms/android/ant-build/res/drawable-land-hdpi/screen.png \
-/home/sstalker/github/remind/cordova/platforms/android/ant-build/res/drawable-port-xhdpi/screen.png \
-/home/sstalker/github/remind/cordova/platforms/android/ant-build/res/drawable-port-ldpi/screen.png \
-/home/sstalker/github/remind/cordova/platforms/android/ant-build/res/drawable-land-ldpi/screen.png \
 /home/sstalker/github/remind/cordova/platforms/android/assets/www \
 /home/sstalker/github/remind/cordova/platforms/android/assets/_where-is-www.txt \
 /home/sstalker/github/remind/cordova/platforms/android/assets/www/cordova.js \
@@ -54,6 +38,7 @@
 /home/sstalker/github/remind/cordova/platforms/android/assets/www/resources/startup/748x1024.png \
 /home/sstalker/github/remind/cordova/platforms/android/assets/www/resources/css/app.css \
 /home/sstalker/github/remind/cordova/platforms/android/assets/www/plugins/org.apache.cordova.wifiinfo \
+/home/sstalker/github/remind/cordova/platforms/android/assets/www/plugins/org.apache.cordova.splashscreen \
 /home/sstalker/github/remind/cordova/platforms/android/assets/www/plugins/org.apache.cordova.vibration \
 /home/sstalker/github/remind/cordova/platforms/android/assets/www/plugins/org.apache.cordova.network-information \
 /home/sstalker/github/remind/cordova/platforms/android/assets/www/plugins/org.apache.cordova.device \
@@ -61,6 +46,8 @@
 /home/sstalker/github/remind/cordova/platforms/android/assets/www/plugins/org.apache.cordova.dialogs \
 /home/sstalker/github/remind/cordova/platforms/android/assets/www/plugins/org.apache.cordova.wifiinfo/www \
 /home/sstalker/github/remind/cordova/platforms/android/assets/www/plugins/org.apache.cordova.wifiinfo/www/WifiInfo.js \
+/home/sstalker/github/remind/cordova/platforms/android/assets/www/plugins/org.apache.cordova.splashscreen/www \
+/home/sstalker/github/remind/cordova/platforms/android/assets/www/plugins/org.apache.cordova.splashscreen/www/splashscreen.js \
 /home/sstalker/github/remind/cordova/platforms/android/assets/www/plugins/org.apache.cordova.vibration/www \
 /home/sstalker/github/remind/cordova/platforms/android/assets/www/plugins/org.apache.cordova.vibration/www/vibration.js \
 /home/sstalker/github/remind/cordova/platforms/android/assets/www/plugins/org.apache.cordova.network-information/www \
