@@ -145,7 +145,7 @@ Ext.define('Reminder.controller.Reminds', {
 
 		switch( newVal ) {
 			case 'Normal': 
-					//remindDateTime.setHidden(false);
+					remindDateTime.setHidden(false);
 					remindPlace.setHidden(true);
 					remindSsidMac.setHidden(true);
 					break;
@@ -155,7 +155,7 @@ Ext.define('Reminder.controller.Reminds', {
 					remindSsidMac.setHidden(true);
 					break;
 			case 'Wifi Remind': 
-					//remindDateTime.setHidden(true);
+					remindDateTime.setHidden(true);
 					remindPlace.setHidden(true);
 					remindSsidMac.setHidden(false);
 					break;

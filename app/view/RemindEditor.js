@@ -19,16 +19,16 @@ Ext.define('Reminder.view.RemindEditor', {
 
 		var backButton = {
 			xtype: 'button',
+			text: 'Back',
 			ui: 'back',
-			text: 'Back to List',
 			handler: this.onBackButtonTap,
 			scope: this
 		};
 
 		var saveButton = {
 			xtype: 'button',
-			ui: 'action',
 			text: 'Save Remind',
+			ui: 'confirm-round',
 			handler: this.onSaveRemindButtonTap,
 			scope: this
 		};
@@ -47,6 +47,8 @@ Ext.define('Reminder.view.RemindEditor', {
 
 		var deleteButton = {
 			xtype: 'button',
+			text: 'Delete',
+			ui: 'decline-round',
 			iconCls: 'trash',
 			iconMask: true,
 			handler: this.onDeleteRemindButtonTap,
@@ -62,74 +64,98 @@ Ext.define('Reminder.view.RemindEditor', {
 		};
 
 		var remindTypeEditor = {
-			xtype: 'selectfield',
-			name: 'type',
-			label: 'Type',
-			required: true,
-			listeners: {
-				change: function( select, newVal, oldVal ) {
-					me.onChangeRemindType(newVal);	
-				}
-				
-			},
-			options: [
-				{ text: 'Normal', value: 'Normal' },
-				{ text: 'Geo Remind', value: 'Geo Remind' },
-				{ text: 'Wifi Remind', value: 'Wifi Remind' }
-			]
+
+			xtype: 'fieldset',
+			items: {
+				xtype: 'selectfield',
+				name: 'type',
+				label: 'Type',
+				labelAlign: 'top',
+				required: true,
+				listeners: {
+					change: function( select, newVal, oldVal ) {
+						me.onChangeRemindType(newVal);	
+					}					
+				},
+				options: [
+					{ text: 'Normal', value: 'Normal' },
+					{ text: 'Geo Remind', value: 'Geo Remind' },
+					{ text: 'Wifi Remind', value: 'Wifi Remind' }
+				]
+			}			
 		};
 
 		var remindMessageEditor = {
-			xtype: 'textareafield',
-			maxRows: 4,
-			name: 'message',
-			label: 'Message',
-			required: true
+			xtype: 'fieldset',
+			items: {
+				xtype: 'textareafield',
+				maxRows: 4,
+				name: 'message',
+				label: 'Message',
+				labelAlign: 'top',
+				required: true
+			}			
 		};
 
 		var remindDateTimeEditor = {
-			xtype: 'datetimepickerfield',
-			label: 'Remind me at',
-			name: 'remindDateTime',
+			xtype: 'fieldset',
 			hiddem: 'false',
 			itemId: 'remindDateTime',
-			dateTimeFormat: 'd.m.Y H:i',
-			required: true,
-			minuteInterval: 1,
-			value: Ext.util.Format.date(new Date(), 'd.m.Y H:i')
+			items: {
+				xtype: 'datetimepickerfield',
+				label: 'Remind me at',
+				labelAlign: 'top',
+				name: 'remindDateTime',
+				dateTimeFormat: 'd.m.Y H:i',
+				required: true,
+				minuteInterval: 1,
+				value: Ext.util.Format.date(new Date(), 'd.m.Y H:i')
+			}
 		};
 
 		var remindTypeNotificationEditor = {
-			xtype: 'selectfield',
-			label: 'Type of Notification',
-			name: 'notification',
+			xtype: 'fieldset',
 			itemId: 'notification',
-			store: Ext.getStore('Notifications'),
-			displayField: 'name',
-			valueField: 'name'
+			items: {
+				xtype: 'selectfield',
+				label: 'Type of Notification',
+				labelAlign: 'top',
+				name: 'notification',
+				store: Ext.getStore('Notifications'),
+				displayField: 'name',
+				valueField: 'name'
+			}
 		};
 
 		var remindPlaceEditor = {
-			xtype: 'selectfield',
-			label: 'Place',
-			name: 'place',
-			hidden: true,
+			xtype: 'fieldset',
 			itemId: 'place',
-			store: Ext.getStore('Places'),
-			displayField: 'place',
-			valueField: 'place',
-			placeHolder: '-- select --'
+			hidden: true,
+			items: {
+				xtype: 'selectfield',
+				label: 'Place',
+				labelAlign: 'top',
+				name: 'place',
+				store: Ext.getStore('Places'),
+				displayField: 'place',
+				valueField: 'place',
+				placeHolder: '-- select --'
+			}
 		};
 
 		var remindSsidMacEditor = {
-			xtype: 'selectfield',
-			label: 'SSID/MAC',
-			name: 'ssid_mac',
-			hidden: true,
+			xtype: 'fieldset',
 			itemId: 'ssid_mac',
-			store: Ext.getStore('Wifis'),
-			displayField: 'ssid',
-			valueField: 'ssid'	
+			hidden: true,
+			items: {
+				xtype: 'selectfield',
+				label: 'SSID/MAC',
+				labelAlign: 'top',
+				name: 'ssid_mac',
+				store: Ext.getStore('Wifis'),
+				displayField: 'ssid',
+				valueField: 'ssid'	
+			}
 		};
 
 		this.add(

@@ -15,7 +15,7 @@ Ext.define('Reminder.view.SettingsPanel', {
 	initialize: function(){
 		this.callParent(arguments);
 
-        console.log('Init');
+        console.log('View - SettingsPanel - initialize');
 
 		var me = this;
         var settingsStore = Ext.getStore('Settings');
@@ -41,34 +41,38 @@ Ext.define('Reminder.view.SettingsPanel', {
         console.log('Pos: ' +  geoPositionValue + ' Inter: ' + geoRefreshIntervall);
 
 		var toggleGPS = {
-            xtype: 'togglefield',
-            name: 'GPSPosition',
-            label: 'GPS Position',
-            value: geoPositionValue,
-            labelAlign: 'top',
+            xtype: 'fieldset',
             hidden: true,
-            listeners: {
-            	change: function(object, newValue, oldValue, eOpts){
-            		me.onChangeToggleGPS(newValue);
-            	}
+            items:{
+                xtype: 'togglefield',
+                name: 'GPSPosition',
+                label: 'GPS Position',
+                labelAlign: 'top',             
+                listeners: {
+                	change: function(object, newValue, oldValue, eOpts){
+                		me.onChangeToggleGPS(newValue);
+                	}
+                }
             }
         };
 
         var sliderIntervall = {
-            xtype: 'sliderfield',
-            name: 'GPSRefresh',
-            label: 'GPS Refresh Intervall: ' + geoRefreshIntervall,
-            labelAlign: 'top',
-            flex: 17,
-            value: geoRefreshIntervall,
-            minValue: 5,
-            maxValue: 120,
-            increment: 5,
-            listeners: {
-            	change: function(object, sl, thumb, newValue, oldValue, eOpts ){
-            	   me.onChangeSliderIntervall(this, newValue);
+            xtype: 'fieldset',
+            items:{
+                xtype: 'sliderfield',
+                name: 'GPSRefresh',
+                label: 'GPS Refresh Intervall: ' + geoRefreshIntervall,
+                labelAlign: 'top',
+                flex: 17,
+                minValue: 5,
+                maxValue: 120,
+                increment: 5,
+                listeners: {
+                    change: function(object, sl, thumb, newValue, oldValue, eOpts ){
+                       me.onChangeSliderIntervall(this, newValue);
+                    }
                 }
-            }
+            }            
         };
 
         this.add([

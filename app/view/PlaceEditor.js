@@ -18,16 +18,16 @@ Ext.define('Reminder.view.PlaceEditor', {
 
 		var backButton = {
 			xtype: 'button',
-			ui: 'back',
 			text: 'Back to List',
+			ui: 'back',			
 			handler: me.onBackButtonTap,
 			scope: me
 		};
 
 		var saveButton = {
 			xtype: 'button',
-			ui: 'action',
 			text: 'Save Place',
+			ui: 'confirm-round',			
 			handler: me.onSavePlaceButtonTap,
 			scope: me
 		};
@@ -46,6 +46,8 @@ Ext.define('Reminder.view.PlaceEditor', {
 
 		var deleteButton = {
 			xtype: 'button',
+			text: 'Delete',
+			ui: 'decline-round',
 			iconCls: 'trash',
 			iconMask: true,
 			handler: me.onDeletePlaceButtonTap,
@@ -61,34 +63,49 @@ Ext.define('Reminder.view.PlaceEditor', {
 		};
 
 		var placeNameEditor = {
-			xtype: 'textfield',
-			name: 'place',
-			label: 'Name',
-			required: true
+			xtype: 'fieldset',
+			items: {
+				xtype: 'textfield',
+				name: 'place',
+				label: 'Name',
+				labelAlign: 'top',
+				required: true
+			}			
 		};
 
 		var geoCoordsLatitudeEditor = {
-			xtype: 'textfield',
-			name: 'latitude',
-			itemId: 'latitude',
-			hidden: false,
-			readOnly: true,
-			required: true
+			xtype: 'fieldset',
+			items: {
+				xtype: 'textfield',
+				name: 'latitude',
+				label: 'Latitude',
+				labelAlign: 'top',
+				itemId: 'latitude',
+				placeHolder: 'Autofilled',
+				readOnly: true,
+				required: true
+			}
 		};
 
 		var geoCoordsLongitudeEditor = {
-			xtype: 'textfield',
-			name: 'longitude',
-			itemId: 'longitude',
-			hidden: false,
-			readOnly: true,
-			required: true
+			xtype: 'fieldset',
+			items: {
+				xtype: 'textfield',
+				name: 'longitude',
+				label: 'Longitude',
+				labelAlign: 'top',
+				itemId: 'longitude',
+				placeHolder: 'Autofilled',
+				readOnly: true,
+				required: true
+			}
 		};
 
 		var geoCoordOpenMapButton = {
 			xtype: 'button',
 			name: 'openmapbutton',
 			text: 'Choose a Location',
+			ui: 'action',
 			handler: this.onOpenMapButtonTap,
 			scope: this
 		};

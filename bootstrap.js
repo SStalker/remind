@@ -674,6 +674,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Reminder.controller.Places": [],
   "Reminder.controller.RemindMainMenu": [],
   "Reminder.controller.Reminds": [],
+  "Reminder.controller.Settings": [],
   "Reminder.controller.Wifis": [],
   "Reminder.helper.Wifi": [
     "Wifi"
@@ -681,10 +682,12 @@ Ext.ClassManager.addNameAlternateMappings({
   "Reminder.model.Notifications": [],
   "Reminder.model.Places": [],
   "Reminder.model.Reminds": [],
+  "Reminder.model.Settings": [],
   "Reminder.model.Wifis": [],
   "Reminder.store.Notifications": [],
   "Reminder.store.Places": [],
   "Reminder.store.Reminds": [],
+  "Reminder.store.Settings": [],
   "Reminder.store.Wifis": [],
   "Reminder.view.AboutUs": [],
   "Reminder.view.GeoMap": [],
@@ -696,6 +699,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "Reminder.view.RemindListContainer": [],
   "Reminder.view.RemindMainMenu": [],
   "Reminder.view.RemindPlaceListContainer": [],
+  "Reminder.view.Settings": [],
+  "Reminder.view.SettingsPanel": [],
   "Reminder.view.WifiEditor": [],
   "Reminder.view.WifiList": [],
   "Reminder.view.WifiListContainer": []
@@ -1431,15 +1436,18 @@ Ext.ClassManager.addNameAliasMappings({
   "Reminder.controller.Places": [],
   "Reminder.controller.RemindMainMenu": [],
   "Reminder.controller.Reminds": [],
+  "Reminder.controller.Settings": [],
   "Reminder.controller.Wifis": [],
   "Reminder.helper.Wifi": [],
   "Reminder.model.Notifications": [],
   "Reminder.model.Places": [],
   "Reminder.model.Reminds": [],
+  "Reminder.model.Settings": [],
   "Reminder.model.Wifis": [],
   "Reminder.store.Notifications": [],
   "Reminder.store.Places": [],
   "Reminder.store.Reminds": [],
+  "Reminder.store.Settings": [],
   "Reminder.store.Wifis": [],
   "Reminder.view.AboutUs": [
     "widget.aboutus"
@@ -1470,6 +1478,12 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "Reminder.view.RemindPlaceListContainer": [
     "widget.remindplacelistcontainer"
+  ],
+  "Reminder.view.Settings": [
+    "widget.settings"
+  ],
+  "Reminder.view.SettingsPanel": [
+    "widget.settingspanel"
   ],
   "Reminder.view.WifiEditor": [
     "widget.wifieditor"

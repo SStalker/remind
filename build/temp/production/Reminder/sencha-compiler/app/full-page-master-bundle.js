@@ -1,2 +1,2 @@
 // @tag full-page
-// @require /home/sstalker/Projekte/Sencha/reminder/app.js
+// @require /home/sstalker/github/remind/app.js

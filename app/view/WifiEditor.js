@@ -18,16 +18,16 @@ Ext.define('Reminder.view.WifiEditor', {
 
 		var backButton = {
 			xtype: 'button',
-			ui: 'back',
 			text: 'Back to List',
+			ui: 'back',
 			handler: this.onBackButtonTap,
 			scope: this
 		};
 
 		var saveButton = {
-			xtype: 'button',
-			ui: 'action',
+			xtype: 'button',			
 			text: 'Save Wifi',
+			ui: 'confirm-round',
 			handler: this.onSaveWifiButtonTap,
 			scope: this
 		};
@@ -46,6 +46,8 @@ Ext.define('Reminder.view.WifiEditor', {
 
 		var deleteButton = {
 			xtype: 'button',
+			text: 'Delete',
+			ui: 'decline-round',
 			iconCls: 'trash',
 			iconMask: true,
 			handler: this.onDeleteWifiButtonTap,
@@ -62,37 +64,39 @@ Ext.define('Reminder.view.WifiEditor', {
 
 
 		var wifiSsidEditor = {
-			xtype: 'selectfield',
-			label: 'SSID',
-			name: 'ssid',
-			itemId: 'ssid',
-			//store: Ext.getStore('Notifications'),
-			displayField: 'ssid',
-			valueField: 'ssid',
-			options: [],
-			listeners: {
-				change: function( select, newVal, oldVal ) {
-					me.onChangeWifiSsid(newVal);	
+			xtype: 'fieldset',
+			items: {
+				xtype: 'selectfield',
+				label: 'SSID',
+				name: 'ssid',
+				itemId: 'ssid',
+				displayField: 'ssid',
+				valueField: 'ssid',
+				options: [],
+				listeners: {
+					change: function( select, newVal, oldVal ) {
+						me.onChangeWifiSsid(newVal);	
+					}					
 				}
-				
-			}
+			}			
 		};
 
 		var wifiMacEditor = {
-			xtype: 'selectfield',
-			label: 'MAC',
-			name: 'mac',
-			itemId: 'mac',
-			//store: Ext.getStore('Places'),
-			displayField: 'mac',
-			valueField: 'mac',
-			options: [],
-			listeners: {
-				change: function( select, newVal, oldVal ) {
-					me.onChangeWifiMac(newVal);	
+			xtype: 'fieldset',
+			items: {
+				xtype: 'selectfield',
+				label: 'MAC',
+				name: 'mac',
+				itemId: 'mac',
+				displayField: 'mac',
+				valueField: 'mac',
+				options: [],
+				listeners: {
+					change: function( select, newVal, oldVal ) {
+						me.onChangeWifiMac(newVal);	
+					}					
 				}
-				
-			}
+			}			
 		};
 
 		this.add(
