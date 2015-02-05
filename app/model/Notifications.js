@@ -4,10 +4,10 @@ Ext.define('Reminder.model.Notifications', {
 	config: {
 
 		idProperty: 'id',
-		identifier: 'uuid',
+		identifier: 'sequential',
 
 		fields: [
-			{ name: 'id', type: 'string' },
+			{ name: 'id', type: 'int' },
 			{ name: 'name', type: 'string' }
 		]
 	}

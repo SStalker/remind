@@ -34,7 +34,8 @@ Ext.define('Reminder.helper.Wifi', {
         var me = this;
 
     	var onSuccess = function(position) {
-		    /*navigator.notification.alert('Latitude: '          + position.coords.latitude          + '\n' +
+		    /*
+                navigator.notification.alert('Latitude: '          + position.coords.latitude          + '\n' +
 		          'Longitude: '         + position.coords.longitude         + '\n' +
 		          'Altitude: '          + position.coords.altitude          + '\n' +
 		          'Accuracy: '          + position.coords.accuracy          + '\n' +
@@ -80,13 +81,13 @@ Ext.define('Reminder.helper.Wifi', {
                 
                 switch(val.data.type) {
                     case 'Normal': 
-                        me.checkReminds(val);
+                        me.checkStandardRemind(val);
                         break;
                     case 'Geo Remind':
-                        me.checkGeoReminds(val);
+                        me.checkGeoRemind(val);
                         break;
                     case 'Wifi Remind':
-                        me.checkWifiReminds(val);
+                        me.checkWifiRemind(val);
                         break;
                 }
 
@@ -106,7 +107,7 @@ Ext.define('Reminder.helper.Wifi', {
 
     },
 
-    checkReminds: function( remind ) {
+    checkStandardRemind: function( remind ) {
         console.log('checkReminds');
         console.log(remind);
         
@@ -114,28 +115,14 @@ Ext.define('Reminder.helper.Wifi', {
         var currentTime = Date.now();
 
         if(remindTime < currentTime){
-            navigator.vibrate(1000);
-            navigator.notification.beep(1);
-            window.plugin.notification.local.add({ message: remind.data.message });
-
-            var remindStore = Ext.getStore('Reminds');
-            remindStore.remove(remind);
-            remindStore.sync();
+            this.checkNotificationSetting(remind);
+            this.deleteActivatedRemind(remind);
         }
         console.log(remindTime);
         console.log(currentTime);
-
-
-        /*$.each(reminds, function(key, val){
-            var remindTime = val.data.remindDateTime.getTime();
-            var currentTime = Date.now();
-            //navigator.notification.alert(currentTime,'Info','OK');
-            
-        });*/
-
     },
 
-    checkGeoReminds: function( remind ) {
+    checkGeoRemind: function( remind ) {
         console.log('checkGeoReminds');
         //console.log(remind);
 
@@ -157,7 +144,6 @@ Ext.define('Reminder.helper.Wifi', {
         var curLat = Wifi.getCurrentLatitude();
         var curLng = Wifi.getCurrentLongitude();
 
-        //navigator.notification.alert(curLat, 'Info', 'Ok');
         console.log('Current: ' + curLat);
         console.log('Current: ' + curLng);
 
@@ -165,21 +151,14 @@ Ext.define('Reminder.helper.Wifi', {
         distanceInMeters = this.getDistance(remindGeoCoordsLat, remindGeoCoordsLng, curLat, curLng);
 
         if( distanceInMeters <= 50 ) {
-            navigator.vibrate(1000);
-            navigator.notification.beep(1);
-            window.plugin.notification.local.add({ message: remind.data.message });
-
-            var remindStore = Ext.getStore('Reminds');
-            remindStore.remove(remind);
-            remindStore.sync();
+            this.checkNotificationSetting(remind);
+            this.deleteActivatedRemind(remind);
         }
 
-        //navigator.notification.alert(distanceInMeters + ' Meters', 'Info', 'Ok');
         console.log(distanceInMeters + ' Meters');
-
     },
 
-    checkWifiReminds: function( remind ) {
+    checkWifiRemind: function( remind ) {
         console.log('checkWifiReminds');
         var wifiStore = Ext.getStore('Wifis');
         
@@ -200,16 +179,37 @@ Ext.define('Reminder.helper.Wifi', {
             $.each(list.ssid, function(key, val){
                 
                 if( ssid == val.ssid ){
-                    navigator.vibrate(1000);
-                    navigator.notification.beep(1);
-                    window.plugin.notification.local.add({ message: remind.data.message });
-
-                    var remindStore = Ext.getStore('Reminds');
-                    remindStore.remove(remind);
-                    remindStore.sync();
+                    this.checkNotificationSetting(remind);
+                    this.deleteActivatedRemind(remind);
                 }
             });
         });
+    },
+
+    checkNotificationSetting: function(remind) {
+
+        var settedNotification = remind.data.notification;
+
+        switch( settedNotification ) {
+            case 'Ringtone': 
+                navigator.notification.beep(1);
+                break;
+            case 'Only vibrate':
+                navigator.vibrate(1000);
+                break;
+            case 'Vibrate & Ringtone':
+                navigator.vibrate(1000);
+                navigator.notification.beep(1);
+                break;
+        }
+
+        window.plugin.notification.local.add({ message: remind.data.message });
+    },
+
+    deleteActivatedRemind: function(remind) {
+        var remindStore = Ext.getStore('Reminds');
+        remindStore.remove(remind);
+        remindStore.sync();
     },
 
     /**

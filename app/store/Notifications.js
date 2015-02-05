@@ -9,8 +9,9 @@ Ext.define('Reminder.store.Notifications', {
 		},
 
 		data: [
-			{ id: 'bal', name: 'Ringtone' },
-			{ id: 'asdfd', name: 'Only vibrate' },
+			{ id: 0, name: 'Ringtone' },
+			{ id: 1, name: 'Only vibrate' },
+			{ id: 2, name: 'Vibrate & Ringtone' }
 		]
 	}
 });

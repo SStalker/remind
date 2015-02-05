@@ -123,8 +123,8 @@ Ext.define('Reminder.controller.Places', {
 		console.log('Controller - Places - userGotPosition');
 
 		var placeEditor = this.getPlaceEditor();
-		var coordsLatitude = placeEditor.getComponent('placeFieldset').getComponent('latitude');
-		var coordsLongitude = placeEditor.getComponent('placeFieldset').getComponent('longitude');
+		var coordsLatitude = placeEditor.query('fieldset > textfield[itemId=latitude]')[0];
+		var coordsLongitude = placeEditor.query('fieldset > textfield[itemId=longitude]')[0];
 
 		coordsLatitude.setValue(coords.latLng.lat());
 		coordsLongitude.setValue(coords.latLng.lng());

@@ -123,7 +123,8 @@ Ext.define('Reminder.view.RemindEditor', {
 				name: 'notification',
 				store: Ext.getStore('Notifications'),
 				displayField: 'name',
-				valueField: 'name'
+				valueField: 'name',
+				placeHolder: '-- select --'
 			}
 		};
 
@@ -154,7 +155,8 @@ Ext.define('Reminder.view.RemindEditor', {
 				name: 'ssid_mac',
 				store: Ext.getStore('Wifis'),
 				displayField: 'ssid',
-				valueField: 'ssid'	
+				valueField: 'ssid',
+				placeHolder: '-- select --'	
 			}
 		};
 
