@@ -8,3 +8,10 @@
 
 // Examples of using the icon mixin:
 // @include icon('user');
+@include icon-font('Pictos',inline-font-files('pictos/pictos-web.woff', woff, 'pictos/pictos-web.ttf', truetype,'pictos/pictos-web.svg', svg));
+
+@include icon('anchor');
+@include icon('globe2', 'G');
+@include icon('wifi', "'");
+@include icon('remind','n');
+@include icon('groups', 'g');

@@ -15,7 +15,7 @@ Ext.define('Reminder.view.RemindMainMenu', {
 		var remindsListButton = {
 			xtype: 'button',
 			text: 'Remindlist',
-			iconCls: 'compose',
+			iconCls: 'remind',
 			handler: me.onRemindListButtonTap,
 			scope: me
 		};
@@ -31,7 +31,7 @@ Ext.define('Reminder.view.RemindMainMenu', {
 		var placesListButton = {
 			xtype: 'button',
 			text: 'Placelist',
-			iconCls: 'compose',
+			iconCls: 'globe2',
 			handler: me.onPlacesListButtonTap,
 			scope: me
 		};
@@ -39,7 +39,7 @@ Ext.define('Reminder.view.RemindMainMenu', {
 		var wifiListButton = {
 			xtype: 'button',
 			text: 'Wifilist',
-			iconCls: 'compose',
+			iconCls: 'wifi',
 			handler: me.onWifiListButtonTap,
 			scope: me	
 		};
@@ -47,7 +47,7 @@ Ext.define('Reminder.view.RemindMainMenu', {
 		var aboutUsButton = {
 			xtype: 'button',
 			text: 'About us',
-			iconCls: 'star',
+			iconCls: 'groups',
 			handler: me.onAboutUsButtonTap,
 			scope: me	
 		};
