@@ -43,7 +43,8 @@ Ext.application({
         'AboutUs',
         'GeoMap',
         'Settings',
-        'SettingsPanel'
+        'SettingsPanel',
+        'HowTo'
     ],
 
     controllers: [
@@ -96,7 +97,9 @@ Ext.application({
         var wifiEditor = { xtype: 'wifieditor' };
         var geoMap = { xtype: 'geomap' };
 
-        var settings = { xtype: 'settings'}
+        var settings = { xtype: 'settings'};
+
+        var howTo = { xtype: 'howto' };
 
         
         Ext.Viewport.add( 
@@ -110,7 +113,8 @@ Ext.application({
                 wifiEditor,
                 aboutUs,
                 geoMap,
-                settings
+                settings,
+                howTo
             ] 
         );
         Ext.Viewport.setMenu(remindMainMenu, { side: 'left', reveal: true });

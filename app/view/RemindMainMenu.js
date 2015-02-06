@@ -44,6 +44,14 @@ Ext.define('Reminder.view.RemindMainMenu', {
 			scope: me	
 		};
 
+		var howToButton = {
+			xtype: 'button',
+			text: 'How to',
+			iconCls: 'howto',
+			handler: me.onHowToButtonTap,
+			scope: me	
+		};		
+
 		var aboutUsButton = {
 			xtype: 'button',
 			text: 'About us',
@@ -58,6 +66,7 @@ Ext.define('Reminder.view.RemindMainMenu', {
 				placesListButton,
 				wifiListButton,
 				settingsButton,
+				howToButton,
 				aboutUsButton
 			]
 		)
@@ -83,6 +92,12 @@ Ext.define('Reminder.view.RemindMainMenu', {
 	onWifiListButtonTap: function() {
 		console.log('tappedWifiListButtonCommand');
 		this.fireEvent('tappedWifiListButtonCommand', this);	
+	},
+
+
+	onHowToButtonTap: function() {
+		console.log('tappedHowToButtonCommand');
+		this.fireEvent('tappedHowToButtonCommand', this);
 	},
 
 	onAboutUsButtonTap: function() {

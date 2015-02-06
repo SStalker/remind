@@ -8,6 +8,7 @@ Ext.define('Reminder.controller.RemindMainMenu', {
 			remindMainMenu: 'remindmainmenu',
 			remindPlaceListContainer: 'remindplacelistcontainer',
 			wifiListContainer: 'wifilistcontainer',
+			howToCarousel: 'howto',
 			aboutUs: 'aboutus',
 			geoMap: 'geomap',
 			settings: 'settings'
@@ -19,9 +20,14 @@ Ext.define('Reminder.controller.RemindMainMenu', {
 				tappedSettingsButtonCommand: 'onTappedSettingsButtonCommand',
 				tappedPlacesListButtonCommand: 'onTappedPlacesListButtonCommand',
 				tappedWifiListButtonCommand: 'onTappedWifiListButtonCommand',
+				tappedHowToButtonCommand: 'onTappedHowToButtonCommand',
 				tappedAboutUsButtonCommand: 'onTappedAboutUsButtonCommand'				
 			},
 
+			howToCarousel: {
+				tappedMenuButtonCommand: 'onTappedMenuButtonCommand'
+			},
+			
 			aboutUs: {
 				tappedMenuButtonCommand: 'onTappedMenuButtonCommand'
 			},
@@ -69,6 +75,11 @@ Ext.define('Reminder.controller.RemindMainMenu', {
 		this.activateWifiList();	
 	},
 
+	onTappedHowToButtonCommand: function() {
+		console.log('Controller - RemindMainMenu - onTappedHowToButtonCommand');		
+		this.activateHowToSite();
+	},
+
 	onTappedAboutUsButtonCommand: function() {
 		console.log('Controller - RemindMainMenu - onTappedAboutUsButtonCommand');
 		this.activateAboutUs();
@@ -105,6 +116,12 @@ Ext.define('Reminder.controller.RemindMainMenu', {
 
 		Ext.Viewport.hideMenu('left');
 		Ext.Viewport.animateActiveItem( remindsList, { type: 'slide', direction: 'right' } );
+	},
+
+	activateHowToSite: function() {
+		var howToCarousel = this.getHowToCarousel();
+		Ext.Viewport.hideMenu('left');
+		Ext.Viewport.animateActiveItem( howToCarousel, { type: 'slide', direction: 'right' } );
 	},
 
 	activateAboutUs: function() {
