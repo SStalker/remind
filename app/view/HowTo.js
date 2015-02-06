@@ -1,5 +1,8 @@
 Ext.define('Reminder.view.HowTo', {
 	extend: 'Ext.Container',
+	requires: [
+        'Ext.carousel.Carousel'
+    ],
 	xtype: 'howto',
 	config: {
 		layout: {

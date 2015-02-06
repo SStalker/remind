@@ -7,6 +7,7 @@ Ext.define('Reminder.view.AboutUs', {
     ],
 
 	config: {
+        scrollable: 'vertical',
 		layout: {
             type: 'hbox',
                 pack: 'center'
@@ -39,7 +40,20 @@ Ext.define('Reminder.view.AboutUs', {
         var textPanel = {
             xtype: 'panel',
             styleHtmlContent: true,
-            html: 'This app was made from: <p><h2>Raphael Grewe</h2></p><p><h2>Lukas Hannigbrinck</h2></p>'
+            html: '<p><h3>Do you often forget about something important in your live?</h3></p> \
+                    \
+                    <p>For example the birthday of your husband or the weddingday of your wife? \
+                    Do you want to get informed instantly in various forms of notifications, \
+                    days before the major event?</p> \
+                    \
+                    <b>Then we\'ve got a solution for you all!</b> \
+                    \
+                    <p>The new Reminder App from <a href="#">Lukas Hannigbrinck</a> and <a href="#">Raphael Grewe</a> \
+                    can remind you in a stunning way. With simple effort, \
+                    you will <b>never</b> forget anything anymore.</p> \
+                    <br><br> \
+                    <p>This app was made from: \
+                    <h4>Raphael Grewe</h4></p><p><h4>Lukas Hannigbrinck</h4></p>'
         };
 
         this.add( [topToolbar, textPanel] );
