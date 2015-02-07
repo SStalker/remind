@@ -203,7 +203,7 @@ Ext.define('Reminder.helper.Wifi', {
                 break;
         }
 
-        window.plugin.notification.local.add({ message: remind.data.message });
+        window.plugin.notification.local.add({ title: 'New Remind', message: remind.data.message, autoCancel: true });
     },
 
     deleteActivatedRemind: function(remind) {
