@@ -161,7 +161,7 @@ Ext.define('Reminder.helper.Wifi', {
     checkWifiRemind: function( remind ) {
         console.log('checkWifiReminds');
         var wifiStore = Ext.getStore('Wifis');
-        
+
 
         var index = wifiStore.find('ssid', remind.data.ssid_mac);
 
@@ -177,10 +177,10 @@ Ext.define('Reminder.helper.Wifi', {
             var list = me.getWifiList();
             
             $.each(list.ssid, function(key, val){
-                
+
                 if( ssid == val.ssid ){
-                    this.checkNotificationSetting(remind);
-                    this.deleteActivatedRemind(remind);
+                    me.checkNotificationSetting(remind);
+                    me.deleteActivatedRemind(remind);
                 }
             });
         });
