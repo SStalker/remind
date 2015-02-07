@@ -15,8 +15,8 @@ Ext.define('Reminder.model.Reminds', {
 			{ name: 'notification', 	type: 'string' },
 			{ name: 'place', 			type: 'string' },
 			{ name: 'ssid_mac',			type: 'string' },
-			{ name: 'createdAt', 		type: 'string' },
-			{ name: 'updatedAt', 		type: 'string' },
+			{ name: 'createdAt', 		type: 'date', dateFormat: 'd.m.Y H:i' },
+			{ name: 'updatedAt', 		type: 'date', dateFormat: 'd.m.Y H:i' },
 			{ name: 'message', 			type: 'string' },
 			{ name: 'places_id', 		type: 'int' }
 		],

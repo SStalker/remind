@@ -7,6 +7,7 @@ Ext.define('Reminder.view.WifiList', {
 		emptyText: 'No Wifis :(',
 		onItemDisclosure: true,
 		grouped: false,
-		itemTpl: '<div>{ssid}, {mac}</div>'
+		itemTpl: '<div class="wifi-ssid">SSID: <span>{ssid}</span></div> \
+				  <div class="wifi-mac">MAC: <span>{mac}</span></div>'
 	}
 });

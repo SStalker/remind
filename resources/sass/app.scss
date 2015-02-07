@@ -16,3 +16,69 @@
 @include icon('remind','n');
 @include icon('groups', 'g');
 @include icon('howto', '?');
+
+@include font-face('Open Sans', inline-font-files('Open_Sans/OpenSans-Regular.ttf', truetype));
+
+
+.remind-icon-normal {
+	width: 96px;
+	height: 96px;
+	float: left;
+	background-image: url('../icons/listicon-normal.png');
+	background-repeat: no-repeat;
+}
+
+.remind-icon-place {
+	width: 96px;
+	height: 96px;
+	float: left;
+	background-image: url('../icons/listicon-place.png');
+	background-repeat: no-repeat;
+}
+
+.remind-icon-wifi {
+	width: 96px;
+	height: 96px;
+	float: left;
+	background-image: url('../icons/listicon-wifi.png');
+	background-repeat: no-repeat;
+}
+
+
+.remind-container {
+	overflow: auto;
+}
+
+.remind-content {
+	margin-left: 110px;
+}
+
+.wifi-ssid,
+.wifi-mac,
+.remind-title,
+.remind-notificationType,
+.remind-notificationAt,
+.remind-notificationType,
+.reminmd-item-text,
+.remind-place,
+.remind-ssid,
+.remind-message{
+
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+
+	span {
+		font-weight: normal;
+		font-size: 12px;
+	}
+}
+
+
+
+
+
+
+
+
+

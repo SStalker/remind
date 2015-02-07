@@ -11,17 +11,6 @@ Ext.define('Reminder.store.Reminds', {
 			}
 		],
 
-		grouper: {
-			sortProperty: 'createdAt',
-			direction: 'DESC',
-			groupFn: function(record) {
-				if( record && record.data.createdAt )
-					return record.data.createdAt;
-				else
-					return '';
-			}
-		},
-
 		proxy: {
 			type: 'localstorage',
 			id: 'remindStore'
