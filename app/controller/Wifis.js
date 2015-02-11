@@ -83,7 +83,7 @@ Ext.define('Reminder.controller.Wifis', {
 				return;
 			}
 
-		
+
 		
 		var wifiStore = Ext.getStore('Wifis');
 
@@ -122,12 +122,13 @@ Ext.define('Reminder.controller.Wifis', {
 		this.activateWifiEditor(record);
 	},
 
-	onChangeWifiSsidCommand: function() {
+	onChangeWifiSsidCommand: function(select, val) {
 		console.log('Controller - Wifis - onChangeWifiSsidCommand');
 	},
 
-	onChangeWifiMacCommand: function() {
+	onChangeWifiMacCommand: function(select, val) {
 		console.log('Controller - Wifis - onChangeWifiMacCommand');
+		
 	},
 
 	activateWifiEditor: function(record) {
