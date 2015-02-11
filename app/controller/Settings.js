@@ -19,16 +19,18 @@ Ext.define('Reminder.controller.Settings', {
 	onchangeSliderIntervallCommand: function(object, self, newValue){
 		console.log('Controller - Settings - SliderIntervall ->' + newValue);
 		
-		self.setLabel('GPS Refresh Intervall: ' + newValue);
+		self.setLabel('Refresh Intervall: ' + newValue);
 
 		var settingsStore = Ext.getStore('Settings');
 
 		console.log('Controller - Settings - Edit Settings');
 
 		var currentSettingsRecord = settingsStore.getAt(0);
-		currentSettingsRecord.set('geoRefresh', newValue);
+		currentSettingsRecord.set('refresh', newValue);
 
 		settingsStore.sync();
+
+		Wifi.setCurrentRefreshRate(newValue*1000);
 	},
 
 	onChangeToggleGPSCommand: function(object, newValue){
@@ -44,14 +46,14 @@ Ext.define('Reminder.controller.Settings', {
 		settingsStore.sync();
 	},
 
-	onInitSettingsStoreCommand: function(geoPositionValue, geoRefreshValue){
+	onInitSettingsStoreCommand: function(geoPositionValue, refreshValue){
 		console.log('Controller - Settings - New Settings');
 
 		var settingsStore = Ext.getStore('Settings');
 
 		var newSettingsRecord = Ext.create('Reminder.model.Settings',{
 			geoPosition: geoPositionValue,
-			geoRefresh: geoRefreshValue
+			refresh: refreshValue
 		});
 
 		settingsStore.add(newSettingsRecord);

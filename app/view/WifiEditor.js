@@ -76,7 +76,7 @@ Ext.define('Reminder.view.WifiEditor', {
 				options: [],
 				listeners: {
 					change: function( select, newVal, oldVal ) {
-						me.onChangeWifiSsid(newVal);	
+						me.onChangeWifiSsid(select, newVal);	
 					}					
 				}
 			}			
@@ -84,6 +84,7 @@ Ext.define('Reminder.view.WifiEditor', {
 
 		var wifiMacEditor = {
 			xtype: 'fieldset',
+			hidden: true,
 			items: {
 				xtype: 'selectfield',
 				label: 'MAC',
@@ -95,7 +96,7 @@ Ext.define('Reminder.view.WifiEditor', {
 				options: [],
 				listeners: {
 					change: function( select, newVal, oldVal ) {
-						me.onChangeWifiMac(newVal);	
+						me.onChangeWifiMac(select, newVal);	
 					}					
 				}
 			}			
@@ -132,13 +133,13 @@ Ext.define('Reminder.view.WifiEditor', {
 		this.fireEvent('backCommand', this);
 	},
 
-	onChangeWifiSsid: function(newVal) {
+	onChangeWifiSsid: function(select, newVal) {
 		console.log('changeWifiSsidCommand');
-		this.fireEvent('changeWifiSsidCommand', this, newVal);
+		this.fireEvent('changeWifiSsidCommand', this, select, newVal);
 	},
 
-	onChangeWifiMac: function(newVal) {
+	onChangeWifiMac: function(select, newVal) {
 		console.log('changeWifiMacCommand');
-		this.fireEvent('changeWifiMacCommand', this, newVal);
+		this.fireEvent('changeWifiMacCommand', this, select, newVal);
 	}
 });

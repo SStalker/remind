@@ -70,6 +70,20 @@ Ext.define('Reminder.controller.Wifis', {
 
 			console.log(currentWifi);
 
+			var errors = currentPlace.validate();
+
+			
+			if( !errors.isValid() ) {
+
+				errors.each(function (item, index, length) {	            
+		        	Ext.Msg.alert('Error!', item.getMessage(), Ext.emptyFn);
+		        });
+
+				currentPlace.reject();
+				return;
+			}
+
+
 		
 		var wifiStore = Ext.getStore('Wifis');
 
@@ -108,12 +122,13 @@ Ext.define('Reminder.controller.Wifis', {
 		this.activateWifiEditor(record);
 	},
 
-	onChangeWifiSsidCommand: function() {
+	onChangeWifiSsidCommand: function(select, val) {
 		console.log('Controller - Wifis - onChangeWifiSsidCommand');
 	},
 
-	onChangeWifiMacCommand: function() {
+	onChangeWifiMacCommand: function(select, val) {
 		console.log('Controller - Wifis - onChangeWifiMacCommand');
+		
 	},
 
 	activateWifiEditor: function(record) {

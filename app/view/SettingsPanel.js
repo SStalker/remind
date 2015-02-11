@@ -20,25 +20,25 @@ Ext.define('Reminder.view.SettingsPanel', {
 		var me = this;
         var settingsStore = Ext.getStore('Settings');
         var geoPositionValue;
-        var geoRefreshIntervall;
+        var refreshIntervall;
 
         if(settingsStore.getCount() == 0){
 
             console.log('View - SettingsPanel - New');
 
             geoPositionValue = 0;
-            geoRefreshIntervall = 60;
+            refreshIntervall = 20;
 
-            this.fireEvent('initSettingsStoreCommand', geoPositionValue, geoRefreshIntervall);
+            this.fireEvent('initSettingsStoreCommand', geoPositionValue, refreshIntervall);
         }else{
 
             console.log('View - SettingsPanel - Old');
 
             geoPositionValue = settingsStore.getAt(0).get('geoPosition');
-            geoRefreshIntervall = settingsStore.getAt(0).get('geoRefresh');
+            refreshIntervall = settingsStore.getAt(0).get('refresh');
         }
 
-        console.log('Pos: ' +  geoPositionValue + ' Inter: ' + geoRefreshIntervall);
+        console.log('Pos: ' +  geoPositionValue + ' Inter: ' + refreshIntervall);
 
 		var toggleGPS = {
             xtype: 'fieldset',
@@ -60,12 +60,12 @@ Ext.define('Reminder.view.SettingsPanel', {
             xtype: 'fieldset',
             items:{
                 xtype: 'sliderfield',
-                name: 'GPSRefresh',
-                label: 'GPS Refresh Intervall: ' + geoRefreshIntervall,
+                name: 'refresh',
+                label: 'Refresh Intervall: ' + refreshIntervall,
                 labelAlign: 'top',
                 flex: 17,
                 minValue: 5,
-                maxValue: 120,
+                maxValue: 60,
                 increment: 5,
                 listeners: {
                     change: function(object, sl, thumb, newValue, oldValue, eOpts ){

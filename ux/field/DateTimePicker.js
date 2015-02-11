@@ -306,7 +306,7 @@ Ext.define('Ext.ux.field.DateTimePicker', {
      * Revert internal date so field won't appear changed
      */
     onPickerCancel: function(picker, options) {
-        this._picker = this._picker.config;
+        this._picker = true;
         picker.destroy();
         return true;
     },

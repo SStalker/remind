@@ -10,7 +10,9 @@ Ext.define('Reminder.helper.Wifi', {
     config: {
     	wifiList: '',
         currentLatitude: 0,
-        currentLongitude: 0
+        currentLongitude: 0,
+        currentRefreshRate: 6000,
+        currentGeoRadius: 50
     },
 
     constructor: function(config) {
@@ -71,10 +73,10 @@ Ext.define('Reminder.helper.Wifi', {
         });*/
 
 
-        var run = function (delay) {
+        var run = function () {
             Ext.create('Ext.util.DelayedTask', function () {
 
-            
+            alert(new Date());
             var reminds = Ext.getStore('Reminds');
             
             $.each(reminds.load().data.all, function(key, val){ 
@@ -94,12 +96,12 @@ Ext.define('Reminder.helper.Wifi', {
             });            
             
             
-            run(delay);
+            run(Wifi.getCurrentRefreshRate());
 
-            }).delay(delay);
+            }).delay(Wifi.getCurrentRefreshRate());
         };
 
-        run(6000);
+        run();
     },
 
     test: function() {
