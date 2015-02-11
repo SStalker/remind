@@ -104,32 +104,56 @@ Ext.define('Reminder.controller.Reminds', {
 		currentRemind.set('notification', newValues.notification);
 		currentRemind.set('ssid_mac', newValues.ssid_mac);
 
-		//var errors = currentRemind.validate();
+		var errors = currentRemind.validate();
 
 		console.log(currentRemind);
 		//console.log(newValues);
 
-		/*if( !errors.isValid() ) {
-			Ext.Msg.alert('Error!', errors.getByField('message')[0].getMessage(), Ext.emptyFn);
-			currentRemind.reject();
+		if( !errors.isValid() ) {
+			errors.each(function (item, index, length) {	            
+	        	Ext.Msg.alert('Error!', item.getMessage(), Ext.emptyFn);
+	        });
+
+			currentPlace.reject();
 			return;
-		}*/
+		}
+
+		// Costum validations
+		if( newValues.type == "Normal" ) {
+			
+			if( newValues.remindDateTime == "" ){
+				Ext.Msg.alert('Error!', 'No dateTime', Ext.emptyFn);
+
+				currentPlace.reject();
+				return;
+			}
+
+		} else if( newValues.type == "Geo Remind" ) {
+			
+			if( newValues.place === null ) {
+				Ext.Msg.alert('Error!', 'No Place', Ext.emptyFn);
+				currentPlace.reject();
+				return;				
+			}
+
+		} else {
+
+			if( newValues.ssid_mac === null ) {
+				Ext.Msg.alert('Error!', 'No SSID', Ext.emptyFn);
+				currentPlace.reject();
+				return;				
+			}
+
+		}
 
 
 		var remindStore = Ext.getStore('Reminds');
 
-		if( remindStore.findRecord('id', currentRemind.data.id) == null ) {
+		if( remindStore.findRecord('id', currentRemind.data.id) == null ) 
 			remindStore.add(currentRemind);
-		}
+		
 
 		remindStore.sync();
-
-		/*remindStore.sort(
-			[
-				{property: 'createdAt', direction: 'DESC'}
-			]
-		);*/
-
 		this.activateRemindList();
 	},
 

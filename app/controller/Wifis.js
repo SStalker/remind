@@ -70,6 +70,20 @@ Ext.define('Reminder.controller.Wifis', {
 
 			console.log(currentWifi);
 
+			var errors = currentPlace.validate();
+
+			
+			if( !errors.isValid() ) {
+
+				errors.each(function (item, index, length) {	            
+		        	Ext.Msg.alert('Error!', item.getMessage(), Ext.emptyFn);
+		        });
+
+				currentPlace.reject();
+				return;
+			}
+
+		
 		
 		var wifiStore = Ext.getStore('Wifis');
 

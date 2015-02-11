@@ -10,6 +10,12 @@ Ext.define('Reminder.model.Wifis', {
 			{ name: 'id', type: 'int' },
 			{ name: 'ssid', type: 'string' },
 			{ name: 'mac', type: 'string' }
+		],
+
+		validations: [
+			{ type: 'presence', field: 'id' },
+			{ type: 'presence', field: 'ssid', message: 'SSID is missing. Please try again.' },
+			{ type: 'presence', field: 'message', message: 'MAC is missing. Please try again.' }
 		]
 	}
 });
