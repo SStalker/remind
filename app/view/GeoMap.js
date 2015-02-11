@@ -3,7 +3,8 @@ Ext.define('Reminder.view.GeoMap', {
 	xtype: 'geomap',
 	requires: [
 		'Ext.Map',
-		'Ext.util.GeoLocation'
+		'Ext.util.GeoLocation',
+		'Ext.device.Connection'
 	],
 	config:{
 		layout: {
@@ -53,16 +54,26 @@ Ext.define('Reminder.view.GeoMap', {
             ]
         };
 
-        var geo = Ext.create('Ext.util.Geolocation', {
-		    autoUpdate: false,
-		    listeners: {
-		        locationupdate: function(geo) {
-		        },
-		        locationerror: function(geo, bTimeout, bPermissionDenied, bLocationUnavailable, message) {
-		        }
-		    }
-		});
-		geo.updateLocation();
+		var geo = null;
+
+		if( navigator.connection.type != "none") {
+
+			geo = Ext.create('Ext.util.Geolocation', {
+			    autoUpdate: false,
+			    listeners: {
+			        locationupdate: function(geo) {
+			        },
+			        locationerror: function(geo, bTimeout, bPermissionDenied, bLocationUnavailable, message) {
+			        }
+			    }
+			});
+			geo.updateLocation();
+
+		} else {
+			// TODO  if device is offline
+		}
+
+        
 
         var geoMap = {
             xtype: 'map',
