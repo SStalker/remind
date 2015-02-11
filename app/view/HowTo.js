@@ -44,9 +44,9 @@ Ext.define('Reminder.view.HowTo', {
 
 			items: [
 				{ html: '<h3>Remindlist</h3> \
-						<p>While creating an new remind you need to choose between three types of reminds. If you choose the "normal" type the remind will take place with a specific date and time. Differently is the Geo Remind type, for this type you have to choose a place/coordinate which is stored in your "Places-List". When you reach a defined radius around this place the remind will take place. The third type is the "Wifi Remind" where you will be remind to your stored topic if your reach a Wireless LAN from your "Wifi-List". After choosing your type there will be different mandatory fields. </p>\
+						<p>While creating an new remind you need to choose between three types of reminder. If you choose the "normal" type the remind will take place with a specific date and time. Differently is the Geo Remind type, for this type you have to choose a place/coordinate which is stored in your "Places-List". When you reach a defined radius around this place the remind will take place. The third type is the "Wifi Remind" where you will be remind to your stored topic if your reach a Wireless LAN from your "Wifi-List". After choosing your type there will be different mandatory fields. </p>\
 						<h5>Buttons: </h5> \
-							<div><div class="howTo-New-icon howTo-icon" ></div> <p> Create new reminds.</p></div>\
+							<div><div class="howTo-New-icon howTo-icon" ></div> <p> Create new reminder.</p></div>\
 							<div><div class="howTo-Menu-icon howTo-icon" ></div> <p> Open side menu.</p></div>\
 							<div><div class="howTo-Edit-icon howTo-icon" ></div> <p> Open the edit menu for this remind.</p></div>\
 							<div><div class="howTo-Save-icon howTo-icon" ></div> <p>Saves a new remind if all required fields are filled.</p></div>\
@@ -79,13 +79,26 @@ Ext.define('Reminder.view.HowTo', {
 				{ html: '<h3>Wifilist</h3> \
 						<p>In your "Wifi-List" you store SSIDs and MAC of wireless LAN accesspoints. You can choose between all accesspoints within the detection radius of your device and press save to save it to your "Wifi-List".</p> \
 						<div><span class="bold-inline">Fields: </span><ul> \
-							<li><span class="bold-inline">SSID: </span>Choose the SSID of the wireless LAN you want to store in your "Wifi-List"</li>\
+							<li><span class="bold-inline">SSID: </span>Choose the SSID of the wireless LAN you want to store in your "Wifi-List".</li>\
 						</ul></div> \
 				',
 				  scrollable:{
 					direction: 'vertical',
 					directionLock: true 
-				  }  }
+				  }  
+				},
+				{ html: '<h3>Settings</h3> \
+						<p>Set intervall for scanning for conditions of your reminder and radius for the "Geo Remind". </p> \
+						<div><span class="bold-inline">Fields: </span><ul> \
+							<li><span class="bold-inline">Refresh Intervall: </span>Set the intervall for scanning of the conditions of your reminder.</li>\
+							<li><span class="bold-inline">Geo Radius: </span>Set the radius of which Geo Reminder should trigger.</li>\
+						</ul></div> \
+				', 
+				  scrollable:{
+					direction: 'vertical',
+					directionLock: true 
+				  } 
+				}
 			]
 		};
 
