@@ -84,12 +84,12 @@ Ext.define('Reminder.view.WifiEditor', {
 
 		var wifiMacEditor = {
 			xtype: 'fieldset',
+			hidden: true,
 			items: {
 				xtype: 'selectfield',
 				label: 'MAC',
 				labelAlign: 'top',
 				name: 'mac',
-				hidden: true,
 				itemId: 'mac',
 				displayField: 'mac',
 				valueField: 'mac',
