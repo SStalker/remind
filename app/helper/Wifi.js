@@ -72,11 +72,9 @@ Ext.define('Reminder.helper.Wifi', {
             console.log('Permission has been granted: ' + granted);
         });*/
 
-
         var run = function () {
             Ext.create('Ext.util.DelayedTask', function () {
 
-            alert(new Date());
             var reminds = Ext.getStore('Reminds');
             
             $.each(reminds.load().data.all, function(key, val){ 
@@ -93,8 +91,9 @@ Ext.define('Reminder.helper.Wifi', {
                         break;
                 }
 
-            });            
-            
+            }); 
+
+            console.log(new Date());
             
             run(Wifi.getCurrentRefreshRate());
 
@@ -151,8 +150,8 @@ Ext.define('Reminder.helper.Wifi', {
 
 
         distanceInMeters = this.getDistance(remindGeoCoordsLat, remindGeoCoordsLng, curLat, curLng);
-
-        if( distanceInMeters <= 50 ) {
+        
+        if( distanceInMeters <= Wifi.getCurrentGeoRadius() ) {
             this.checkNotificationSetting(remind);
             this.deleteActivatedRemind(remind);
         }

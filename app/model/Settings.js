@@ -8,7 +8,8 @@ Ext.define('Reminder.model.Settings', {
 
 		fields: [
 			{ name: 'geoPosition', type: 'bool' },
-			{ name: 'geoRefresh', type: 'number' }
+			{ name: 'refresh', type: 'number' },
+			{ name: 'geoRadius', type: 'number' }
 		]
 	}
 });

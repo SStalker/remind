@@ -11,15 +11,33 @@ Ext.define('Reminder.controller.Settings', {
 			settingsPanel:{		
 				changeToggleGPSCommand: 'onChangeToggleGPSCommand',
 				changeSliderIntervallCommand: 'onchangeSliderIntervallCommand',
+				changeSliderGeoRadiusCommand: 'onChangeSliderGeoRadiusCommand',
 				initSettingsStoreCommand: 'onInitSettingsStoreCommand'
 			}
 		}
 	},
 
-	onchangeSliderIntervallCommand: function(object, self, newValue){
+	onChangeSliderGeoRadiusCommand: function(object, self, newValue) {
+		console.log('Controller - Settings - onChangeSliderGeoRadiusCommand');
+		console.log(newValue);
+		
+		self.setLabel('Geo-Radius: ' + newValue + ' m');
+
+		var settingsStore = Ext.getStore('Settings');
+
+
+		var currentSettingsRecord = settingsStore.getAt(0);
+		currentSettingsRecord.set('geoRadius', newValue);
+
+		settingsStore.sync();
+
+		Wifi.setCurrentGeoRadius(newValue);
+	},
+
+	onchangeSliderIntervallCommand: function(object, self, newValue) {
 		console.log('Controller - Settings - SliderIntervall ->' + newValue);
 		
-		self.setLabel('Refresh Intervall: ' + newValue);
+		self.setLabel('Check-Intervall: ' + newValue + ' s' );
 
 		var settingsStore = Ext.getStore('Settings');
 
