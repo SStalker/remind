@@ -27,7 +27,7 @@ Ext.define('Reminder.view.RemindEditor', {
 
 		var saveButton = {
 			xtype: 'button',
-			text: 'Save Remind',
+			text: 'Save',
 			ui: 'confirm-round',
 			handler: this.onSaveRemindButtonTap,
 			scope: this
@@ -168,8 +168,8 @@ Ext.define('Reminder.view.RemindEditor', {
 					itemId: 'remindFieldset',
 					items: [
 						remindTypeEditor,
-						remindDateTimeEditor,
 						remindTypeNotificationEditor,
+						remindDateTimeEditor,	
 						remindPlaceEditor,
 						remindSsidMacEditor,
 						remindMessageEditor,

@@ -18,7 +18,7 @@ Ext.define('Reminder.view.PlaceEditor', {
 
 		var backButton = {
 			xtype: 'button',
-			text: 'Back to List',
+			text: 'Back',
 			ui: 'back',			
 			handler: me.onBackButtonTap,
 			scope: me
@@ -26,7 +26,7 @@ Ext.define('Reminder.view.PlaceEditor', {
 
 		var saveButton = {
 			xtype: 'button',
-			text: 'Save Place',
+			text: 'Save',
 			ui: 'confirm-round',			
 			handler: me.onSavePlaceButtonTap,
 			scope: me
