@@ -18,7 +18,7 @@ Ext.define('Reminder.view.WifiEditor', {
 
 		var backButton = {
 			xtype: 'button',
-			text: 'Back to List',
+			text: 'Back',
 			ui: 'back',
 			handler: this.onBackButtonTap,
 			scope: this
@@ -26,7 +26,7 @@ Ext.define('Reminder.view.WifiEditor', {
 
 		var saveButton = {
 			xtype: 'button',			
-			text: 'Save Wifi',
+			text: 'Save',
 			ui: 'confirm-round',
 			handler: this.onSaveWifiButtonTap,
 			scope: this
