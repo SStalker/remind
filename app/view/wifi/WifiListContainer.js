@@ -1,4 +1,4 @@
-Ext.define('Reminder.view.WifiListContainer', {
+Ext.define('Reminder.view.wifi.WifiListContainer', {
 	extend: 'Ext.Container',
 	xtype: 'wifilistcontainer',
 
@@ -25,7 +25,7 @@ Ext.define('Reminder.view.WifiListContainer', {
             text: 'Menu',
             ui: 'action',
             iconCls: 'list',
-            handler: this.onRemindMenuButtonTap,
+            handler: this.onMenuButtonTap,
             scope: this    
         };
 
@@ -61,8 +61,8 @@ Ext.define('Reminder.view.WifiListContainer', {
         this.fireEvent('editWifiCommand', this, record);
     },
 
-    onRemindMenuButtonTap: function() {
-        console.log('View - RemindWifiListContainer - onRemindMenuButtonTap');
+    onMenuButtonTap: function() {
+        console.log('View - WifiListContainer - onMenuButtonTap');
         this.fireEvent('tappedMenuButtonCommand', this);
     },
 

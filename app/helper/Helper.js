@@ -1,7 +1,7 @@
 
-Ext.define('Reminder.helper.Wifi', {
+Ext.define('Reminder.helper.Helper', {
     singleton : true,
-    alternateClassName : 'Wifi',
+    alternateClassName : 'Helper',
     requires: [
         'Ext.util.DelayedTask',
         'Reminder.store.Reminds'
@@ -12,7 +12,8 @@ Ext.define('Reminder.helper.Wifi', {
         currentLatitude: 0,
         currentLongitude: 0,
         currentRefreshRate: 6000,
-        currentGeoRadius: 50
+        currentGeoRadius: 50,
+        currentMacList: null,
     },
 
     constructor: function(config) {
@@ -95,9 +96,9 @@ Ext.define('Reminder.helper.Wifi', {
 
             console.log(new Date());
             
-            run(Wifi.getCurrentRefreshRate());
+            run(Helper.getCurrentRefreshRate());
 
-            }).delay(Wifi.getCurrentRefreshRate());
+            }).delay(Helper.getCurrentRefreshRate());
         };
 
         run();
@@ -140,10 +141,10 @@ Ext.define('Reminder.helper.Wifi', {
         console.log('Lat: ' + remindGeoCoordsLat);
         console.log('Lng: ' + remindGeoCoordsLng);
 
-        Wifi.getCurrentGeoLocation();
+        Helper.getCurrentGeoLocation();
 
-        var curLat = Wifi.getCurrentLatitude();
-        var curLng = Wifi.getCurrentLongitude();
+        var curLat = Helper.getCurrentLatitude();
+        var curLng = Helper.getCurrentLongitude();
 
         console.log('Current: ' + curLat);
         console.log('Current: ' + curLng);
@@ -151,7 +152,7 @@ Ext.define('Reminder.helper.Wifi', {
 
         distanceInMeters = this.getDistance(remindGeoCoordsLat, remindGeoCoordsLng, curLat, curLng);
         
-        if( distanceInMeters <= Wifi.getCurrentGeoRadius() ) {
+        if( distanceInMeters <= Helper.getCurrentGeoRadius() ) {
             this.checkNotificationSetting(remind);
             this.deleteActivatedRemind(remind);
         }

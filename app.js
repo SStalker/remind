@@ -30,26 +30,26 @@ Ext.application({
     ],
 
     views: [
-        'RemindListContainer',
-        'RemindList',
-        'RemindEditor',
-        'RemindMainMenu',
-        'RemindPlaceListContainer',
-        'WifiListContainer',
-        'WifiList',
-        'WifiEditor',
-        'PlaceList',
-        'PlaceEditor',
-        'AboutUs',
-        'GeoMap',
-        'Settings',
-        'SettingsPanel',
-        'HowTo'
+        'remind.RemindListContainer',
+        'remind.RemindList',
+        'remind.RemindEditor',
+        'menu.MainMenu',        
+        'wifi.WifiListContainer',
+        'wifi.WifiList',
+        'wifi.WifiEditor',
+        'place.PlaceListContainer',
+        'place.PlaceList',
+        'place.PlaceEditor',
+        'aboutus.AboutUs',
+        'geomap.GeoMap',
+        'setting.Settings',
+        'setting.SettingsPanel',
+        'howto.HowTo'
     ],
 
     controllers: [
         'Reminds',
-        'RemindMainMenu',
+        'MainMenu',
         'Places',
         'Wifis',
         'Settings'
@@ -87,8 +87,8 @@ Ext.application({
 
         var remindsListContainer = { xtype: 'remindlistcontainer' };
         var remindEditor = { xtype: 'remindeditor' };
-        var remindPlaceListContainer = { xtype: 'remindplacelistcontainer' };
-        var remindMainMenu = Ext.create('Reminder.view.RemindMainMenu' );
+        var placeListContainer = { xtype: 'placelistcontainer' };
+        var mainMenu = Ext.create('Reminder.view.menu.MainMenu' );
         var placeEditor = { xtype: 'placeeditor' };
         var aboutUs = { xtype: 'aboutus' };
 
@@ -106,7 +106,7 @@ Ext.application({
             [
                 remindsListContainer, 
                 remindEditor, 
-                remindPlaceListContainer, 
+                placeListContainer, 
                 placeEditor,
                 wifiListContainer,
                 wifiList,
@@ -117,8 +117,8 @@ Ext.application({
                 howTo
             ] 
         );
-        Ext.Viewport.setMenu(remindMainMenu, { side: 'left', reveal: true });
-        Wifi.startCheckRemindTask();
+        Ext.Viewport.setMenu(mainMenu, { side: 'left', reveal: true });
+        Helper.startCheckRemindTask();
 
     },
 

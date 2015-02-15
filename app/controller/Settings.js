@@ -31,7 +31,7 @@ Ext.define('Reminder.controller.Settings', {
 
 		settingsStore.sync();
 
-		Wifi.setCurrentGeoRadius(newValue);
+		Helper.setCurrentGeoRadius(newValue);
 	},
 
 	onchangeSliderIntervallCommand: function(object, self, newValue) {
@@ -48,7 +48,7 @@ Ext.define('Reminder.controller.Settings', {
 
 		settingsStore.sync();
 
-		Wifi.setCurrentRefreshRate(newValue*1000);
+		Helper.setCurrentRefreshRate(newValue*1000);
 	},
 
 	onChangeToggleGPSCommand: function(object, newValue){

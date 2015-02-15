@@ -1,4 +1,4 @@
-Ext.define('Reminder.view.RemindEditor', {
+Ext.define('Reminder.view.remind.RemindEditor', {
 	extend: 'Ext.form.Panel',
 	xtype: 'remindeditor',
 

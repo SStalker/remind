@@ -1,4 +1,4 @@
-Ext.define('Reminder.view.HowTo', {
+Ext.define('Reminder.view.howto.HowTo', {
 	extend: 'Ext.Container',
 	requires: [
         'Ext.carousel.Carousel'
@@ -19,7 +19,7 @@ Ext.define('Reminder.view.HowTo', {
             text: 'Menu',
             ui: 'action',
             iconCls: 'list',
-            handler: this.onRemindMenuButtonTap,
+            handler: this.onMenuButtonTap,
             scope: this    
         };
 
@@ -106,7 +106,7 @@ Ext.define('Reminder.view.HowTo', {
 
 	},
 	
-	onRemindMenuButtonTap: function() {
+	onMenuButtonTap: function() {
         console.log('tappedMenuButtonCommand');
         this.fireEvent('tappedMenuButtonCommand', this);
     }

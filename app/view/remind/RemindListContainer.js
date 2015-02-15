@@ -1,4 +1,4 @@
-Ext.define('Reminder.view.RemindListContainer', {
+Ext.define('Reminder.view.remind.RemindListContainer', {
     extend: 'Ext.Container',
     
     xtype: 'remindlistcontainer',
@@ -26,7 +26,7 @@ Ext.define('Reminder.view.RemindListContainer', {
             text: 'Menu',
             ui: 'action',
             iconCls: 'list',
-            handler: this.onRemindMenuButtonTap,
+            handler: this.onMenuButtonTap,
             scope: this    
         };
 
@@ -67,7 +67,7 @@ Ext.define('Reminder.view.RemindListContainer', {
         this.fireEvent('editRemindCommand', this, record);
     },
 
-    onRemindMenuButtonTap: function() {
+    onMenuButtonTap: function() {
         console.log('tappedMenuButtonCommand');
         this.fireEvent('tappedMenuButtonCommand', this);
     }

@@ -1,4 +1,4 @@
-Ext.define('Reminder.view.Settings', {
+Ext.define('Reminder.view.setting.Settings', {
 	extend: 'Ext.Container',
 	xtype: 'settings',
 
@@ -22,7 +22,7 @@ Ext.define('Reminder.view.Settings', {
             text: 'Menu',
             ui: 'action',
             iconCls: 'list',
-            handler: this.onRemindMenuButtonTap,
+            handler: this.onMenuButtonTap,
             scope: this    
         };
 
@@ -46,7 +46,7 @@ Ext.define('Reminder.view.Settings', {
         this.callParent(arguments);
 	},
 
-	onRemindMenuButtonTap: function() {
+	onMenuButtonTap: function() {
         console.log('tappedMenuButtonCommand');
         this.fireEvent('tappedMenuButtonCommand', this);
     }

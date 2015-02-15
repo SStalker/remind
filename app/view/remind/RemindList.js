@@ -1,4 +1,4 @@
-Ext.define('Reminder.view.RemindList', {
+Ext.define('Reminder.view.remind.RemindList', {
 	extend: 'Ext.dataview.List',
 	xtype: 'remindlist',
 

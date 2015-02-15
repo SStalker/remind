@@ -1,4 +1,4 @@
-Ext.define('Reminder.view.GeoMap', {
+Ext.define('Reminder.view.geomap.GeoMap', {
 	extend: 'Ext.Container',
 	xtype: 'geomap',
 	requires: [
@@ -56,7 +56,7 @@ Ext.define('Reminder.view.GeoMap', {
 
 		var geo = null;
 
-		if( navigator.connection.type != "none") {
+/*		if( navigator.connection.type != "none") {
 
 			geo = Ext.create('Ext.util.Geolocation', {
 			    autoUpdate: false,
@@ -72,7 +72,7 @@ Ext.define('Reminder.view.GeoMap', {
 		} else {
 			// TODO  if device is offline
 		}
-
+*/
         
 
         var geoMap = {

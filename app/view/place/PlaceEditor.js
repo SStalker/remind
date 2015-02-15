@@ -1,4 +1,4 @@
-Ext.define('Reminder.view.PlaceEditor', {
+Ext.define('Reminder.view.place.PlaceEditor', {
 	extend: 'Ext.form.Panel',
 	xtype: 'placeeditor',
 

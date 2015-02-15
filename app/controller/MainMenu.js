@@ -1,12 +1,12 @@
-Ext.define('Reminder.controller.RemindMainMenu', {
+Ext.define('Reminder.controller.MainMenu', {
 	extend: 'Ext.app.Controller',
 
 	config: {
 
 		refs: {
 			remindsListContainer: 'remindlistcontainer',
-			remindMainMenu: 'remindmainmenu',
-			remindPlaceListContainer: 'remindplacelistcontainer',
+			mainMenu: 'mainmenu',
+			placeListContainer: 'placelistcontainer',
 			wifiListContainer: 'wifilistcontainer',
 			howToCarousel: 'howto',
 			aboutUs: 'aboutus',
@@ -15,7 +15,7 @@ Ext.define('Reminder.controller.RemindMainMenu', {
 		},
 
 		control: {
-			remindMainMenu: {
+			mainMenu: {
 				tappedRemindListButtonCommand: 'onTappedRemindListButtonCommand',
 				tappedSettingsButtonCommand: 'onTappedSettingsButtonCommand',
 				tappedPlacesListButtonCommand: 'onTappedPlacesListButtonCommand',
@@ -36,7 +36,7 @@ Ext.define('Reminder.controller.RemindMainMenu', {
 				tappedMenuButtonCommand: 'onTappedMenuButtonCommand'
 			},
 
-			remindPlaceListContainer: {
+			placeListContainer: {
 				tappedMenuButtonCommand: 'onTappedMenuButtonCommand'
 			},
 
@@ -87,7 +87,7 @@ Ext.define('Reminder.controller.RemindMainMenu', {
 
 	onTappedMenuButtonCommand: function() {
 		console.log('Controller - RemindMainMenu - onTappedMenuButtonCommand');
-		var menu = this.getRemindMainMenu();
+		var menu = this.getMainMenu();
 
 		if( menu.isHidden() )
 			Ext.Viewport.showMenu('left');
@@ -104,7 +104,7 @@ Ext.define('Reminder.controller.RemindMainMenu', {
 	},
 
 	activatePlaceList: function() {
-		var placeList = this.getRemindPlaceListContainer();
+		var placeList = this.getPlaceListContainer();
 
 		Ext.Viewport.hideMenu('left');
 		Ext.Viewport.animateActiveItem( placeList, { type: 'slide', direction: 'right' } );

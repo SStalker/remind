@@ -1,4 +1,4 @@
-Ext.define('Reminder.view.PlaceList', {
+Ext.define('Reminder.view.place.PlaceList', {
 	extend: 'Ext.dataview.List',
 	xtype: 'placelist',
 

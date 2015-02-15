@@ -1,8 +1,8 @@
-Ext.define('Reminder.view.GeoMapContainer', {
+Ext.define('Reminder.view.geomap.GeoMapContainer', {
 	extend: 'Ext.Container',
 	xtype: 'geomapcontainer',
 	requires: [
-		'Reminder.view.GeoMap'
+		'Reminder.view.geomap.GeoMap'
 	],
 	
 	config:{

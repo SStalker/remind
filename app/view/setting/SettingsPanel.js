@@ -1,4 +1,4 @@
-Ext.define('Reminder.view.SettingsPanel', {
+Ext.define('Reminder.view.setting.SettingsPanel', {
 	extend: 'Ext.form.Panel',
 	xtype: 'settingspanel',
 
@@ -41,8 +41,8 @@ Ext.define('Reminder.view.SettingsPanel', {
             refreshIntervall = settingsStore.getAt(0).get('refresh');
         }
 
-        Wifi.setCurrentRefreshRate(refreshIntervall*1000);
-        Wifi.setCurrentGeoRadius(geoRadius);
+        Helper.setCurrentRefreshRate(refreshIntervall*1000);
+        Helper.setCurrentGeoRadius(geoRadius);
 
         console.log('Pos: ' +  geoPositionValue + ' Inter: ' + refreshIntervall);
 

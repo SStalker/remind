@@ -2,7 +2,7 @@ Ext.define('Reminder.controller.Wifis', {
 	extend: 'Ext.app.Controller',
 	requires: [
 		'Ext.data.proxy.LocalStorage',
-		'Reminder.helper.Wifi'
+		'Reminder.helper.Helper'
 	],
 
 	config: {
@@ -15,9 +15,7 @@ Ext.define('Reminder.controller.Wifis', {
 				saveWifiCommand: 'onSaveWifiCommand',
 				deleteWifiCommand: 'onDeleteWifiCommand',
 				backCommand: 'onBackCommand',
-				changeWifiSsidCommand: 'onChangeWifiSsidCommand',
-				changeWifiMacCommand: 'onChangeWifiMacCommand'
-
+				changeWifiSsidCommand: 'onChangeWifiSsidCommand'
 			},
 			wifiListContainer: {
 				editWifiCommand: 'onEditWifiCommand',
@@ -33,14 +31,12 @@ Ext.define('Reminder.controller.Wifis', {
 		var ssidSelect = this.getWifiEditor().query('#ssid')[0];
 		var macSelect = this.getWifiEditor().query('#mac')[0];
 		
-		Wifi.prepareWifiList(function(){
-			var list = Wifi.getWifiList();
+		Helper.prepareWifiList(function(){
+			var list = Helper.getWifiList();
 
 			ssidSelect.setOptions(list.ssid);
-			macSelect.setOptions(list.mac);
-			
+			Helper.setCurrentMacList(list.mac);
 			console.log('Controller - Wifis - onNewWifiCommand ' + list);
-			//console.log(list);
 
 
 			// TODO Get a frsh list of current wifis 
@@ -49,8 +45,6 @@ Ext.define('Reminder.controller.Wifis', {
 				mac: list.mac[0]
 			});
 
-			console.log(newWifi);
-			//navigator.notification.alert(newWifi,'Info','OK');	
 			me.activateWifiEditor(newWifi);	
 		});
 		
@@ -60,26 +54,29 @@ Ext.define('Reminder.controller.Wifis', {
 		console.log('Controller - Wifis - onSaveWifiCommand');
 
 		var wifiEditor = this.getWifiEditor();
+		var ssidSelect = this.getWifiEditor().query('#ssid')[0];
 		var currentWifi = wifiEditor.getRecord();
 		var newValues = wifiEditor.getValues();
 
-		console.log(newValues);
-		
+		var index = this.getIndexFromSelect(ssidSelect);
+
+
+		var currentMac = Helper.getCurrentMacList()[index];
+
 			currentWifi.set('ssid', newValues.ssid);
-			currentWifi.set('mac', newValues.mac);
+			currentWifi.set('mac', currentMac.mac);
 
 			console.log(currentWifi);
 
-			var errors = currentPlace.validate();
+			var errors = currentWifi.validate();
 
-			
 			if( !errors.isValid() ) {
 
 				errors.each(function (item, index, length) {	            
 		        	Ext.Msg.alert('Error!', item.getMessage(), Ext.emptyFn);
 		        });
 
-				currentPlace.reject();
+				currentWifi.reject();
 				return;
 			}
 
@@ -87,7 +84,7 @@ Ext.define('Reminder.controller.Wifis', {
 		
 		var wifiStore = Ext.getStore('Wifis');
 
-		if( wifiStore.findRecord('id', currentWifi.data.id) == null ) {
+		if( wifiStore.findRecord('mac', currentWifi.data.mac) == null ) {
 			console.log('Controller - Wifis - onSaveWifiCommand add');
 			wifiStore.add(currentWifi);
 		}
@@ -147,6 +144,22 @@ Ext.define('Reminder.controller.Wifis', {
 		var wifiList = this.getWifiListContainer();
 
 		Ext.Viewport.animateActiveItem( wifiList, { type: 'slide', direction: 'right' } );
+	},
+
+	getIndexFromSelect: function(select) {
+
+		var currentElement = select.getRecord().get('ssid');
+		var counter = 0;
+
+		select.getStore().each(function(rec) {
+    		if( currentElement == rec.get('ssid') )
+    			return false;
+
+    		counter++;
+		});
+
+		return counter;
+		
 	},
 
 	initialize: function() {

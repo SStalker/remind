@@ -9,7 +9,6 @@ Ext.define('Reminder.controller.Reminds', {
 		refs: {
 			remindsListContainer: 'remindlistcontainer',
 			remindEditor: 'remindeditor',
-			remindMainMenu: 'remindmainmenu',
 			wifiSelectField: 'fieldset #ssid_mac'
 		},
 
@@ -184,17 +183,6 @@ Ext.define('Reminder.controller.Reminds', {
 					remindSsidMac.setHidden(false);
 					break;
 		}
-	},
-
-	onTappedMenuButtonCommand: function() {
-		console.log('Controller - Reminds - onTappedMenuButtonCommand');
-		var menu = this.getRemindMainMenu();
-
-		if( menu.isHidden() )
-			Ext.Viewport.showMenu('left');
-		else
-			Ext.Viewport.hideMenu('left');
-
 	},
 
 	activateRemindList: function() {

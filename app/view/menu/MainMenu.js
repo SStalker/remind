@@ -1,6 +1,6 @@
-Ext.define('Reminder.view.RemindMainMenu', {
+Ext.define('Reminder.view.menu.MainMenu', {
 	extend: 'Ext.Menu',
-	xtype: 'remindmainmenu',
+	xtype: 'mainmenu',
 
 	config: {
 		width: 250,

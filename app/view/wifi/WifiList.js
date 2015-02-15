@@ -1,4 +1,4 @@
-Ext.define('Reminder.view.WifiList', {
+Ext.define('Reminder.view.wifi.WifiList', {
 	extend: 'Ext.dataview.List',
 	xtype: 'wifilist',
 

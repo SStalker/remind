@@ -7,8 +7,7 @@ Ext.define('Reminder.controller.Places', {
 	config: {
 		refs: {
 			placeEditor: 'placeeditor',
-			remindPlaceListContainer: 'remindplacelistcontainer',
-			remindMainMenu: 'remindmainmenu',
+			remindPlaceListContainer: 'placelistcontainer',
 			geoMap: 'geomap'
 
 		},
@@ -172,12 +171,7 @@ Ext.define('Reminder.controller.Places', {
 	activatePlaceEditor: function(record) {
 		var placeEditor = this.getPlaceEditor();
 
-			//console.log(placeEditor);
-
 			placeEditor.setRecord(record);
-
-			//console.log(record);
-		
 
 		Ext.Viewport.animateActiveItem( placeEditor, { type: 'slide', direction: 'left' } );
 	},
@@ -191,18 +185,6 @@ Ext.define('Reminder.controller.Places', {
 	activateLocationMap: function() {
 		var geoMap = this.getGeoMap();
 		Ext.Viewport.animateActiveItem( geoMap, { type: 'cover'});
-	},
-
-	onTappedMenuButtonCommand: function() {
-		console.log('Controller - Places - onTappedMenuButtonCommand');
-
-		var menu = this.getRemindMainMenu();
-
-		if( menu.isHidden() )
-			Ext.Viewport.showMenu('left');
-		else
-			Ext.Viewport.hideMenu('left');
-
 	},
 
 	initialize: function() {

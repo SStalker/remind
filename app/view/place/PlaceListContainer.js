@@ -1,6 +1,6 @@
-Ext.define('Reminder.view.RemindPlaceListContainer', {
+Ext.define('Reminder.view.place.PlaceListContainer', {
 	extend: 'Ext.Container',
-	xtype: 'remindplacelistcontainer',
+	xtype: 'placelistcontainer',
 
 	config: {
 		layout: {
@@ -25,7 +25,7 @@ Ext.define('Reminder.view.RemindPlaceListContainer', {
             text: 'Menu',
             ui: 'action',
             iconCls: 'list',
-            handler: this.onRemindMenuButtonTap,
+            handler: this.onMenuButtonTap,
             scope: this    
         };
 
@@ -57,17 +57,17 @@ Ext.define('Reminder.view.RemindPlaceListContainer', {
     },
 
     onPlaceListDisclose: function(list, record, target, index, evt, options) {
-        console.log('View - RemindPlaceListContainer - onPlaceListDisclose');
+        console.log('View - PlaceListContainer - onPlaceListDisclose');
         this.fireEvent('editPlaceCommand', this, record);
     },
 
-    onRemindMenuButtonTap: function() {
-        console.log('View - RemindPlaceListContainer - onRemindMenuButtonTap');
+    onMenuButtonTap: function() {
+        console.log('View - PlaceListContainer - onRemindMenuButtonTap');
         this.fireEvent('tappedMenuButtonCommand', this);
     },
 
     onNewPlaceButtonTap: function() {
-    	console.log('View - RemindPlaceListContainer - onNewPlaceButtonTap');
+    	console.log('View - PlaceListContainer - onNewPlaceButtonTap');
     	this.fireEvent('newPlaceCommand', this);
     }
 });
