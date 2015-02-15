@@ -36,7 +36,7 @@ Ext.define('Reminder.controller.Places', {
 	},
 
 	onNewPlaceCommand: function() {
-		console.log('Controller - Places - onNewPlaceCommand');
+		// console.log('Controller - Places - onNewPlaceCommand');
 
 		var newPlace = Ext.create('Reminder.model.Places', {		
 			place: '',
@@ -44,13 +44,13 @@ Ext.define('Reminder.controller.Places', {
 			longitude: ''
 		});
 
-		console.log(newPlace);
+		// console.log(newPlace);
 
 		this.activatePlaceEditor(newPlace);
 	},
 
 	onSavePlaceCommand: function() {
-		console.log('Controller - Places - onSavePlaceCommand');
+		// console.log('Controller - Places - onSavePlaceCommand');
 
 		var placeEditor = this.getPlaceEditor();
 		var currentPlace = placeEditor.getRecord();
@@ -79,7 +79,7 @@ Ext.define('Reminder.controller.Places', {
 		var placeStore = Ext.getStore('Places');
 
 		if( placeStore.findRecord('id', currentPlace.data.id) == null ) {
-			console.log('Controller - Places - onSavePlaceCommand add');
+			// console.log('Controller - Places - onSavePlaceCommand add');
 			placeStore.add(currentPlace);
 		}
 
@@ -90,7 +90,7 @@ Ext.define('Reminder.controller.Places', {
 	},
 
 	onDeletePlaceCommand: function() {
-		console.log('Controller - Places - onDeletePlaceCommand');
+		// console.log('Controller - Places - onDeletePlaceCommand');
 		
 		var placeEditor = this.getPlaceEditor();
 		var currentPlace = placeEditor.getRecord();
@@ -103,23 +103,23 @@ Ext.define('Reminder.controller.Places', {
 	},
 
 	onBackCommand: function() {
-		console.log('Controller - Places - Back to List');
+		// console.log('Controller - Places - Back to List');
 
 		this.activatePlaceList();
 	},
 
 	onEditPlaceCommand: function(list, record) {
-		console.log('Controller - Places - onEditPlaceCommand');
+		// console.log('Controller - Places - onEditPlaceCommand');
 		this.activatePlaceEditor(record);
 	},
 
 	onOpenMapCommand: function() {
-		console.log('Controller - Places - onOpenMapCommand');
+		// console.log('Controller - Places - onOpenMapCommand');
 		this.activateLocationMap();
 	},
 
 	userGotPosition: function(map, coords) {
-		console.log('Controller - Places - userGotPosition');
+		// console.log('Controller - Places - userGotPosition');
 
 		var placeEditor = this.getPlaceEditor();
 		var coordsLatitude = placeEditor.query('fieldset > textfield[itemId=latitude]')[0];
@@ -140,7 +140,7 @@ Ext.define('Reminder.controller.Places', {
 	},
 
 	onCustomZoomInCommand: function() {
-		console.log('Controller - Places - onCustomZoomInCommand');
+		// console.log('Controller - Places - onCustomZoomInCommand');
 		var map = this.getGeoMap().getComponent('geomap').getMap();
 
 
@@ -151,7 +151,7 @@ Ext.define('Reminder.controller.Places', {
 
 
 	onCustomZoomOutCommand: function() {
-		console.log('Controller - Places - onCustomZoomOutCommand');
+		// console.log('Controller - Places - onCustomZoomOutCommand');
 		var map = this.getGeoMap().getComponent('geomap').getMap();
 
 
@@ -161,7 +161,7 @@ Ext.define('Reminder.controller.Places', {
 	},
 
 	onBackGeoCommand: function() {
-		console.log('Controller - Places - onBackGeoCommand');
+		// console.log('Controller - Places - onBackGeoCommand');
 
 		var placeEditor = this.getPlaceEditor();
 
@@ -188,11 +188,11 @@ Ext.define('Reminder.controller.Places', {
 	},
 
 	initialize: function() {
-		console.log('Controller - Places - init');
+		// console.log('Controller - Places - init');
 	},
 
 	launch: function() {
-		console.log('Controller - Places - launch');
+		// console.log('Controller - Places - launch');
 	}
 	
 });

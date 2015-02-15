@@ -11,7 +11,7 @@ Ext.define('Reminder.view.howto.HowTo', {
 	},
 
 	initialize: function() {
-		console.log('View - HowTo - initialize');
+		// console.log('View - HowTo - initialize');
 		this.callParent(arguments);
 
 		var menuButton = {
@@ -107,7 +107,7 @@ Ext.define('Reminder.view.howto.HowTo', {
 	},
 	
 	onMenuButtonTap: function() {
-        console.log('tappedMenuButtonCommand');
+      	// console.log('tappedMenuButtonCommand');
         this.fireEvent('tappedMenuButtonCommand', this);
     }
 });

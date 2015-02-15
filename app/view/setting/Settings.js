@@ -13,7 +13,7 @@ Ext.define('Reminder.view.setting.Settings', {
 	},
 
 	initialize: function() {
-        console.log('View - Settings - initialize');
+        // console.log('View - Settings - initialize');
         this.callParent(arguments);
 
 
@@ -47,7 +47,7 @@ Ext.define('Reminder.view.setting.Settings', {
 	},
 
 	onMenuButtonTap: function() {
-        console.log('tappedMenuButtonCommand');
+        // console.log('tappedMenuButtonCommand');
         this.fireEvent('tappedMenuButtonCommand', this);
     }
 });

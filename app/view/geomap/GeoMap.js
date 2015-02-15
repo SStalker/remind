@@ -13,7 +13,7 @@ Ext.define('Reminder.view.geomap.GeoMap', {
 	},
 
 	initialize: function() {
-        console.log('View - GeoMap - initialize');
+      	// console.log('View - GeoMap - initialize');
         this.callParent(arguments);
         var me = this;
 
@@ -56,7 +56,7 @@ Ext.define('Reminder.view.geomap.GeoMap', {
 
 		var geo = null;
 
-/*		if( navigator.connection.type != "none") {
+ 		if( navigator.connection.type != "none") {
 
 			geo = Ext.create('Ext.util.Geolocation', {
 			    autoUpdate: false,
@@ -71,9 +71,7 @@ Ext.define('Reminder.view.geomap.GeoMap', {
 
 		} else {
 			// TODO  if device is offline
-		}
-*/
-        
+		}        
 
         var geoMap = {
             xtype: 'map',
@@ -100,11 +98,11 @@ Ext.define('Reminder.view.geomap.GeoMap', {
 
 	launch: function() {
         this.callParent(arguments);
-        console.log('View - GeoMap - launch');
+      	// console.log('View - GeoMap - launch');
 	},
 
 	onGeoMapBackButtonTap: function() {
-		console.log('View - GeoMap - onGeoMapBackButtonTap');	
+		// console.log('View - GeoMap - onGeoMapBackButtonTap');	
 		this.fireEvent('backCommand', this);
 	},
 
@@ -118,7 +116,7 @@ Ext.define('Reminder.view.geomap.GeoMap', {
 	},
 
 	onMapRenderd: function( me, map, eOpts ) {
-	    console.log('View - GeoMap - onMapRenderd');	
+	  	// console.log('View - GeoMap - onMapRenderd');	
 	    //Prepare the overlay object so we can use its "fromContainerPixelToLatLng" method
 		var overlay = new google.maps.OverlayView();
 		overlay.draw = function() {};

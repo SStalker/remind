@@ -57,17 +57,17 @@ Ext.define('Reminder.view.wifi.WifiListContainer', {
     },
 
     onWifiListDisclose: function(list, record, target, index, evt, options) {
-        console.log('View - WifiListContainer - onWifiListDisclose');
+        // console.log('View - WifiListContainer - onWifiListDisclose');
         this.fireEvent('editWifiCommand', this, record);
     },
 
     onMenuButtonTap: function() {
-        console.log('View - WifiListContainer - onMenuButtonTap');
+        // console.log('View - WifiListContainer - onMenuButtonTap');
         this.fireEvent('tappedMenuButtonCommand', this);
     },
 
     onNewWifiButtonTap: function() {
-    	console.log('View - WifiListContainer - onNewWifiButtonTap');
+    	// console.log('View - WifiListContainer - onNewWifiButtonTap');
     	this.fireEvent('newWifiCommand', this);
     }
 });

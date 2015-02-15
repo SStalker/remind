@@ -111,22 +111,22 @@ Ext.define('Reminder.view.wifi.WifiEditor', {
 	},
 
 	onSaveWifiButtonTap: function() {
-		console.log('saveWifiCommand');
+		// console.log('saveWifiCommand');
 		this.fireEvent('saveWifiCommand', this);
 	},
 
 	onDeleteWifiButtonTap: function() {
-		console.log('deleteWifiCommand');
+		// console.log('deleteWifiCommand');
 		this.fireEvent('deleteWifiCommand', this);
 	},
 
 	onBackButtonTap: function() {
-		console.log('backCommand');
+		// console.log('backCommand');
 		this.fireEvent('backCommand', this);
 	},
 
 	onChangeWifiSsid: function(select, newVal) {
-		console.log('changeWifiSsidCommand');
+		// console.log('changeWifiSsidCommand');
 		this.fireEvent('changeWifiSsidCommand', this, select, newVal);
 	}
 });

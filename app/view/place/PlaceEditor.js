@@ -11,7 +11,7 @@ Ext.define('Reminder.view.place.PlaceEditor', {
 	},
 
 	initialize: function() {
-		console.log('View - PlaceEditor - initialize');
+		// console.log('View - PlaceEditor - initialize');
 		this.callParent(arguments);
 
 		var me = this;
@@ -129,22 +129,22 @@ Ext.define('Reminder.view.place.PlaceEditor', {
 	},
 
 	onSavePlaceButtonTap: function() {
-		console.log('View - PlaceEditor - onSavePlaceButtonTap');
+		// console.log('View - PlaceEditor - onSavePlaceButtonTap');
 		this.fireEvent('savePlaceCommand', this);
 	},
 
 	onDeletePlaceButtonTap: function() {
-		console.log('View - PlaceEditor - onDeletePlaceButtonTap');
+		// console.log('View - PlaceEditor - onDeletePlaceButtonTap');
 		this.fireEvent('deletePlaceCommand', this);
 	},
 
 	onBackButtonTap: function() {
-		console.log('View - PlaceEditor - onBackButtonTap');
+		// console.log('View - PlaceEditor - onBackButtonTap');
 		this.fireEvent('backCommand', this);
 	},
 
 	onOpenMapButtonTap: function() {
-		console.log('View - PlaceEditor - onOpenMapButtonTap');
+		// console.log('View - PlaceEditor - onOpenMapButtonTap');
 		this.fireEvent('openMapCommand', this);
 	}
 });

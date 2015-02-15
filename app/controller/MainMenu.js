@@ -53,40 +53,40 @@ Ext.define('Reminder.controller.MainMenu', {
 	},
 
 	onTappedRemindListButtonCommand: function() {
-		console.log('Controller - RemindMainMenu - onTappedRemindListButtonCommand');
+		// console.log('Controller - RemindMainMenu - onTappedRemindListButtonCommand');
 		this.activateRemindList();
 	},
 
 	onTappedSettingsButtonCommand: function() {
 
-		console.log('Controller - RemindMainMenu - onTappedSettingsButtonCommand');
+		// console.log('Controller - RemindMainMenu - onTappedSettingsButtonCommand');
 		this.activateSettings();
 	},
 
 	onTappedPlacesListButtonCommand: function() {
-		console.log('Controller - RemindMainMenu - onTappedPlacesListButtonCommand');
+		// console.log('Controller - RemindMainMenu - onTappedPlacesListButtonCommand');
 
 		this.activatePlaceList();
 	},
 
 	onTappedWifiListButtonCommand: function() {
-		console.log('Controller - RemindMainMenu - onTappedWifiListButtonCommand');
+		// console.log('Controller - RemindMainMenu - onTappedWifiListButtonCommand');
 
 		this.activateWifiList();	
 	},
 
 	onTappedHowToButtonCommand: function() {
-		console.log('Controller - RemindMainMenu - onTappedHowToButtonCommand');		
+		// console.log('Controller - RemindMainMenu - onTappedHowToButtonCommand');		
 		this.activateHowToSite();
 	},
 
 	onTappedAboutUsButtonCommand: function() {
-		console.log('Controller - RemindMainMenu - onTappedAboutUsButtonCommand');
+		// console.log('Controller - RemindMainMenu - onTappedAboutUsButtonCommand');
 		this.activateAboutUs();
 	},
 
 	onTappedMenuButtonCommand: function() {
-		console.log('Controller - RemindMainMenu - onTappedMenuButtonCommand');
+		// console.log('Controller - RemindMainMenu - onTappedMenuButtonCommand');
 		var menu = this.getMainMenu();
 
 		if( menu.isHidden() )
@@ -139,10 +139,10 @@ Ext.define('Reminder.controller.MainMenu', {
 	},
 
 	initialize: function() {
-		console.log('Controller - RemindMainMenu - initialize');
+		// console.log('Controller - RemindMainMenu - initialize');
 	},
 
 	launch: function() {
-		console.log('Controller - RemindMainMenu - launch');	
+		// console.log('Controller - RemindMainMenu - launch');	
 	}
 });

@@ -181,22 +181,22 @@ Ext.define('Reminder.view.remind.RemindEditor', {
 	},
 
 	onSaveRemindButtonTap: function() {
-		console.log('saveRemindCommand');
+		// console.log('saveRemindCommand');
 		this.fireEvent('saveRemindCommand', this);
 	},
 
 	onDeleteRemindButtonTap: function() {
-		console.log('deleteRemindCommand');
+		// console.log('deleteRemindCommand');
 		this.fireEvent('deleteRemindCommand', this);
 	},
 
 	onBackButtonTap: function() {
-		console.log('backCommand');
+		// console.log('backCommand');
 		this.fireEvent('backCommand', this);
 	},
 
 	onChangeRemindType: function(newVal) {
-		console.log('changeRemindTypeCommand');
+		// console.log('changeRemindTypeCommand');
 		this.fireEvent('changeRemindTypeCommand', this, newVal);
 	}
 });

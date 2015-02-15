@@ -12,7 +12,7 @@ Ext.define('Reminder.view.geomap.GeoMapContainer', {
 	},
 
 	initialize: function() {
-        console.log('View - GeoMap - initialize');
+        // console.log('View - GeoMap - initialize');
         this.callParent(arguments);
         var me = this;
 
@@ -70,11 +70,11 @@ Ext.define('Reminder.view.geomap.GeoMapContainer', {
 
 	launch: function() {
         this.callParent(arguments);
-        console.log('View - GeoMap - launch');
+        // console.log('View - GeoMap - launch');
 	},
 
 	onGeoMapBackButtonTap: function() {
-		console.log('View - GeoMap - onGeoMapBackButtonTap');	
+		// console.log('View - GeoMap - onGeoMapBackButtonTap');	
 		this.fireEvent('tappedMenuButtonCommand', this);
 	}
 });

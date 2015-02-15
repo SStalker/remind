@@ -18,8 +18,8 @@ Ext.define('Reminder.controller.Settings', {
 	},
 
 	onChangeSliderGeoRadiusCommand: function(object, self, newValue) {
-		console.log('Controller - Settings - onChangeSliderGeoRadiusCommand');
-		console.log(newValue);
+		// console.log('Controller - Settings - onChangeSliderGeoRadiusCommand');
+		// console.log(newValue);
 		
 		self.setLabel('Geo-Radius: ' + newValue + ' m');
 
@@ -35,13 +35,13 @@ Ext.define('Reminder.controller.Settings', {
 	},
 
 	onchangeSliderIntervallCommand: function(object, self, newValue) {
-		console.log('Controller - Settings - SliderIntervall ->' + newValue);
+		// console.log('Controller - Settings - SliderIntervall ->' + newValue);
 		
 		self.setLabel('Check-Intervall: ' + newValue + ' s' );
 
 		var settingsStore = Ext.getStore('Settings');
 
-		console.log('Controller - Settings - Edit Settings');
+		// console.log('Controller - Settings - Edit Settings');
 
 		var currentSettingsRecord = settingsStore.getAt(0);
 		currentSettingsRecord.set('refresh', newValue);
@@ -52,11 +52,11 @@ Ext.define('Reminder.controller.Settings', {
 	},
 
 	onChangeToggleGPSCommand: function(object, newValue){
-		console.log('Controller - Settings - ToggleGPS ->' + newValue);
+		// console.log('Controller - Settings - ToggleGPS ->' + newValue);
 
 		var settingsStore = Ext.getStore('Settings');
 
-		console.log('Controller - Settings - Edit Settings');
+		// console.log('Controller - Settings - Edit Settings');
 
 		var currentSettingsRecord = settingsStore.getAt(0);
 		currentSettingsRecord.set('geoPosition', newValue);
@@ -65,7 +65,7 @@ Ext.define('Reminder.controller.Settings', {
 	},
 
 	onInitSettingsStoreCommand: function(geoPositionValue, refreshValue){
-		console.log('Controller - Settings - New Settings');
+		// console.log('Controller - Settings - New Settings');
 
 		var settingsStore = Ext.getStore('Settings');
 
@@ -81,11 +81,11 @@ Ext.define('Reminder.controller.Settings', {
 
 	launch: function() {
 		this.callParent(arguments);
-		console.log('Controller - Settings - launch');
+		// console.log('Controller - Settings - launch');
 	},
 
 	init: function() {
 		this.callParent(arguments);
-		console.log('Controller - Settings - init');	
+		// console.log('Controller - Settings - init');	
 	}
 });

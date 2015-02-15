@@ -75,33 +75,33 @@ Ext.define('Reminder.view.menu.MainMenu', {
 	},
 
 	onRemindListButtonTap: function() {
-		console.log('tappedRemindListButtonCommand');
+		// console.log('tappedRemindListButtonCommand');
 		this.fireEvent('tappedRemindListButtonCommand', this);
 	},
 
 	onSettingsButtonTap: function() {
-		console.log('tappedSettingsButtonCommand');
+		// console.log('tappedSettingsButtonCommand');
 		this.fireEvent('tappedSettingsButtonCommand', this);
 	},
 
 	onPlacesListButtonTap: function() {
-		console.log('tappedPlacesListButtonCommand');
+		// console.log('tappedPlacesListButtonCommand');
 		this.fireEvent('tappedPlacesListButtonCommand', this);
 	},
 
 	onWifiListButtonTap: function() {
-		console.log('tappedWifiListButtonCommand');
+		// console.log('tappedWifiListButtonCommand');
 		this.fireEvent('tappedWifiListButtonCommand', this);	
 	},
 
 
 	onHowToButtonTap: function() {
-		console.log('tappedHowToButtonCommand');
+		// console.log('tappedHowToButtonCommand');
 		this.fireEvent('tappedHowToButtonCommand', this);
 	},
 
 	onAboutUsButtonTap: function() {
-		console.log('tappedAboutUsButtonCommand');
+		// console.log('tappedAboutUsButtonCommand');
 		this.fireEvent('tappedAboutUsButtonCommand', this);
 	}
 });

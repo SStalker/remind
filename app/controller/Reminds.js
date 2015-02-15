@@ -27,7 +27,7 @@ Ext.define('Reminder.controller.Reminds', {
 	},
 
 	onNewRemindCommand: function() {
-		console.log('Controller - Reminds - onNewRemindCommand');
+		// console.log('Controller - Reminds - onNewRemindCommand');
 
 		var now = Ext.util.Format.date(new Date(), 'd.m.Y H:i');
 
@@ -46,20 +46,19 @@ Ext.define('Reminder.controller.Reminds', {
 			message: ''
 		});
 
-		console.log(newRemind);
+		// console.log(newRemind);
 
 		this.activateRemindEditor(newRemind);
 
 	},
 
 	onEditRemindCommand: function(list, record) {
-		console.log('Controller - Reminds - onEditRemindCommand');
-		//console.log()
+		// console.log('Controller - Reminds - onEditRemindCommand');
 		this.activateRemindEditor(record);
 	},
 
 	onDeleteRemindCommand: function() {
-		console.log('Controller - Reminds - onDeleteRemindCommand');
+		// console.log('Controller - Reminds - onDeleteRemindCommand');
 		
 		var remindEditor = this.getRemindEditor();
 		var currentRemind = remindEditor.getRecord();
@@ -73,7 +72,7 @@ Ext.define('Reminder.controller.Reminds', {
 	},
 
 	onBackCommand: function() {
-		console.log('Controller - Reminds - onBackCommand');
+		// console.log('Controller - Reminds - onBackCommand');
 
 		this.activateRemindList();
 	},
@@ -83,12 +82,12 @@ Ext.define('Reminder.controller.Reminds', {
 
 		remindEditor.setRecord(record);
 
-		console.log(record);
+		// console.log(record);
 		Ext.Viewport.animateActiveItem( remindEditor, { type: 'slide', direction: 'left' } );
 	},
 
 	onSaveRemindCommand: function() {
-		console.log('Controller - Reminds - onSaveRemindCommand');
+		// console.log('Controller - Reminds - onSaveRemindCommand');
 
 		var remindEditor = this.getRemindEditor();
 
@@ -105,8 +104,8 @@ Ext.define('Reminder.controller.Reminds', {
 
 		var errors = currentRemind.validate();
 
-		console.log(currentRemind);
-		//console.log(newValues);
+		// console.log(currentRemind);
+		// console.log(newValues);
 
 		if( !errors.isValid() ) {
 			errors.each(function (item, index, length) {	            
@@ -157,8 +156,8 @@ Ext.define('Reminder.controller.Reminds', {
 	},
 
 	onChangeRemindTypeCommand: function(select, newVal, oldVal ) {
-		console.log('Controller - Reminds - onChangeRemindTypeCommand');
-		console.log(newVal);
+		// console.log('Controller - Reminds - onChangeRemindTypeCommand');
+		// console.log(newVal);
 		var remindEditor = this.getRemindEditor();
 		var form = remindEditor.getComponent('remindFieldset');
 
@@ -192,11 +191,11 @@ Ext.define('Reminder.controller.Reminds', {
 	launch: function() {
 		this.callParent(arguments);
 		Ext.getStore('Reminds').load();
-		console.log('Controller - Reminds - launch');
+		// console.log('Controller - Reminds - launch');
 	},
 
 	init: function() {
 		this.callParent(arguments);
-		console.log('Controller - Reminds - init');	
+		// console.log('Controller - Reminds - init');	
 	}
 });

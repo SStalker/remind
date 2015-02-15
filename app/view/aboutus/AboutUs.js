@@ -15,7 +15,7 @@ Ext.define('Reminder.view.aboutus.AboutUs', {
 	},
 
 	initialize: function() {
-        console.log('View - AboutUs - initialize');
+        // console.log('View - AboutUs - initialize');
         this.callParent(arguments);
 
 
@@ -60,12 +60,12 @@ Ext.define('Reminder.view.aboutus.AboutUs', {
 	},
 
 	launch: function() {
-        console.log('View - AboutUs - launch');
+        // console.log('View - AboutUs - launch');
         this.callParent(arguments);
 	},
 
 	onMenuButtonTap: function() {
-        console.log('tappedMenuButtonCommand');
+        // console.log('tappedMenuButtonCommand');
         this.fireEvent('tappedMenuButtonCommand', this);
     }
 });

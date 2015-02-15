@@ -17,7 +17,7 @@ Ext.define('Reminder.helper.Helper', {
     },
 
     constructor: function(config) {
-    	console.log('Helper - init');
+    	// console.log('Helper - init');
     	this.initConfig(config);
 
     	return this;
@@ -32,7 +32,7 @@ Ext.define('Reminder.helper.Helper', {
     },
 
     getCurrentGeoLocation: function() {
-    	console.log('Helper - getCurrentGeoLocation');
+    	// console.log('Helper - getCurrentGeoLocation');
 
         var me = this;
 
@@ -48,14 +48,14 @@ Ext.define('Reminder.helper.Helper', {
 		          'Timestamp: '         + position.timestamp                + '\n', 'Geo Info', 'OK');
             */
 
-            console.log(position.coords.latitude);
-            console.log(position.coords.longitude);
+            // console.log(position.coords.latitude);
+            // console.log(position.coords.longitude);
             me.setCurrentLatitude(position.coords.latitude);
             me.setCurrentLongitude(position.coords.longitude);
 		};
 
 		// onError Callback receives a PositionError object
-		//
+		
 		function onError(error) {
 		    navigator.notification.alert('code: '    + error.code    + '\n' +
 		          'message: ' + error.message + '\n', 'Geo Error', 'OK');
@@ -70,7 +70,7 @@ Ext.define('Reminder.helper.Helper', {
         var me = this;
 
         /*window.plugin.notification.local.hasPermission(function (granted) {
-            console.log('Permission has been granted: ' + granted);
+          // console.log('Permission has been granted: ' + granted);
         });*/
 
         var run = function () {
@@ -94,7 +94,7 @@ Ext.define('Reminder.helper.Helper', {
 
             }); 
 
-            console.log(new Date());
+            // console.log(new Date());
             
             run(Helper.getCurrentRefreshRate());
 
@@ -110,8 +110,8 @@ Ext.define('Reminder.helper.Helper', {
     },
 
     checkStandardRemind: function( remind ) {
-        console.log('checkReminds');
-        console.log(remind);
+        // console.log('checkReminds');
+        // console.log(remind);
         
         var remindTime = remind.data.remindDateTime.getTime();
         var currentTime = Date.now();
@@ -120,12 +120,12 @@ Ext.define('Reminder.helper.Helper', {
             this.checkNotificationSetting(remind);
             this.deleteActivatedRemind(remind);
         }
-        console.log(remindTime);
-        console.log(currentTime);
+        // console.log(remindTime);
+        // console.log(currentTime);
     },
 
     checkGeoRemind: function( remind ) {
-        console.log('checkGeoReminds');
+        // console.log('checkGeoReminds');
         //console.log(remind);
 
         var placeStore = Ext.getStore('Places');
@@ -138,16 +138,16 @@ Ext.define('Reminder.helper.Helper', {
         var remindGeoCoordsLat = currentCoords.data.latitude;
         var remindGeoCoordsLng = currentCoords.data.longitude;
 
-        console.log('Lat: ' + remindGeoCoordsLat);
-        console.log('Lng: ' + remindGeoCoordsLng);
+        // console.log('Lat: ' + remindGeoCoordsLat);
+        // console.log('Lng: ' + remindGeoCoordsLng);
 
         Helper.getCurrentGeoLocation();
 
         var curLat = Helper.getCurrentLatitude();
         var curLng = Helper.getCurrentLongitude();
 
-        console.log('Current: ' + curLat);
-        console.log('Current: ' + curLng);
+        // console.log('Current: ' + curLat);
+        // console.log('Current: ' + curLng);
 
 
         distanceInMeters = this.getDistance(remindGeoCoordsLat, remindGeoCoordsLng, curLat, curLng);
@@ -157,11 +157,11 @@ Ext.define('Reminder.helper.Helper', {
             this.deleteActivatedRemind(remind);
         }
 
-        console.log(distanceInMeters + ' Meters');
+        // console.log(distanceInMeters + ' Meters');
     },
 
     checkWifiRemind: function( remind ) {
-        console.log('checkWifiReminds');
+        // console.log('checkWifiReminds');
         var wifiStore = Ext.getStore('Wifis');
 
 
@@ -217,10 +217,10 @@ Ext.define('Reminder.helper.Helper', {
     /**
 	 *	A function that returns an multidimensional array in form of following
 	 *
-	 *	array[
+	 *	networks{
 	 *		ssid[],
 	 *		mac[]
-	 *	] 
+	 *	} 
  	 *
 	 *	when no wifi is activated then return false
 	 *

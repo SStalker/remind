@@ -57,17 +57,17 @@ Ext.define('Reminder.view.place.PlaceListContainer', {
     },
 
     onPlaceListDisclose: function(list, record, target, index, evt, options) {
-        console.log('View - PlaceListContainer - onPlaceListDisclose');
+        // console.log('View - PlaceListContainer - onPlaceListDisclose');
         this.fireEvent('editPlaceCommand', this, record);
     },
 
     onMenuButtonTap: function() {
-        console.log('View - PlaceListContainer - onRemindMenuButtonTap');
+        // console.log('View - PlaceListContainer - onRemindMenuButtonTap');
         this.fireEvent('tappedMenuButtonCommand', this);
     },
 
     onNewPlaceButtonTap: function() {
-    	console.log('View - PlaceListContainer - onNewPlaceButtonTap');
+    	// console.log('View - PlaceListContainer - onNewPlaceButtonTap');
     	this.fireEvent('newPlaceCommand', this);
     }
 });

@@ -15,7 +15,7 @@ Ext.define('Reminder.view.setting.SettingsPanel', {
 	initialize: function(){
 		this.callParent(arguments);
 
-        console.log('View - SettingsPanel - initialize');
+        // console.log('View - SettingsPanel - initialize');
 
 		var me = this;
         var settingsStore = Ext.getStore('Settings');
@@ -25,7 +25,7 @@ Ext.define('Reminder.view.setting.SettingsPanel', {
 
         if(settingsStore.getCount() == 0){
 
-            console.log('View - SettingsPanel - New');
+            // console.log('View - SettingsPanel - New');
 
             geoPositionValue = 0;
             geoRadius = 50;
@@ -34,7 +34,7 @@ Ext.define('Reminder.view.setting.SettingsPanel', {
             this.fireEvent('initSettingsStoreCommand', geoPositionValue, refreshIntervall);
         }else{
 
-            console.log('View - SettingsPanel - Old');
+            // console.log('View - SettingsPanel - Old');
 
             geoPositionValue = settingsStore.getAt(0).get('geoPosition');
             geoRadius = settingsStore.getAt(0).get('geoRadius');
@@ -44,7 +44,7 @@ Ext.define('Reminder.view.setting.SettingsPanel', {
         Helper.setCurrentRefreshRate(refreshIntervall*1000);
         Helper.setCurrentGeoRadius(geoRadius);
 
-        console.log('Pos: ' +  geoPositionValue + ' Inter: ' + refreshIntervall);
+        // console.log('Pos: ' +  geoPositionValue + ' Inter: ' + refreshIntervall);
 
 		var toggleGPS = {
             xtype: 'fieldset',
@@ -110,17 +110,17 @@ Ext.define('Reminder.view.setting.SettingsPanel', {
 	},
 
     onChangeSliderIntervall: function(self, newValue){
-        console.log('View - Settings - SliderIntervall');
+        // console.log('View - Settings - SliderIntervall');
         this.fireEvent('changeSliderIntervallCommand', this, self, newValue);
     },
 
 	onChangeToggleGPS: function(newValue){
-		console.log('View - Settings - Toggle GPS');
+		// console.log('View - Settings - Toggle GPS');
 		this.fireEvent('changeToggleGPSCommand', this, newValue);
 	},
 
     onChangeGeoRadius: function(self, newValue) {
-        console.log('View - Settings - GeoRadius');
+        // console.log('View - Settings - GeoRadius');
         this.fireEvent('changeSliderGeoRadiusCommand', this, self, newValue);
     }
 });

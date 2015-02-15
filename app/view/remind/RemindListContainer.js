@@ -58,17 +58,17 @@ Ext.define('Reminder.view.remind.RemindListContainer', {
     },
 
     onNewRemindButtonTap: function() {
-        console.log('newRemindCommand');
+        // console.log('newRemindCommand');
         this.fireEvent('newRemindCommand', this);
     },
 
     onRemindListDisclose: function(list, record, target, index, evt, options) {
-        console.log('editRemindCommand');
+        // console.log('editRemindCommand');
         this.fireEvent('editRemindCommand', this, record);
     },
 
     onMenuButtonTap: function() {
-        console.log('tappedMenuButtonCommand');
+        // console.log('tappedMenuButtonCommand');
         this.fireEvent('tappedMenuButtonCommand', this);
     }
 });
