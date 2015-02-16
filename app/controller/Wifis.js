@@ -38,8 +38,6 @@ Ext.define('Reminder.controller.Wifis', {
 			Helper.setCurrentMacList(list.mac);
 			// console.log('Controller - Wifis - onNewWifiCommand ' + list);
 
-
-			// TODO Get a frsh list of current wifis 
 			var newWifi = Ext.create('Reminder.model.Wifis', {		
 				ssid: list.ssid[0],
 				mac: list.mac[0]

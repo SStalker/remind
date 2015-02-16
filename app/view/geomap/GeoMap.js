@@ -117,7 +117,7 @@ Ext.define('Reminder.view.geomap.GeoMap', {
 
 	onMapRenderd: function( me, map, eOpts ) {
 	  	// console.log('View - GeoMap - onMapRenderd');	
-	    //Prepare the overlay object so we can use its "fromContainerPixelToLatLng" method
+	    // Prepare the overlay object so we can use its "fromContainerPixelToLatLng" method
 		var overlay = new google.maps.OverlayView();
 		overlay.draw = function() {};
 		overlay.onAdd = function() {};
@@ -125,14 +125,9 @@ Ext.define('Reminder.view.geomap.GeoMap', {
 		overlay.setMap(map);
 
 		var container = this;
-		//console.log(this);
-		//console.log(me);
-		//console.log(map);
-		
-
-		// this = ext.map
-		// me = ext.map
-		// map = map
+		// console.log(this);
+		// console.log(me);
+		// console.log(map);
 
 		//Prepare the touch vars
 		me.touches = {
@@ -147,10 +142,6 @@ Ext.define('Reminder.view.geomap.GeoMap', {
 		        me.currentY = 0;
 		    }
 		};
-
-
-		//var me = this;
-
 
 		me.element.dom.addEventListener('touchstart', function(e) {
 		    /**
@@ -189,8 +180,7 @@ Ext.define('Reminder.view.geomap.GeoMap', {
 
 		                var point  = new google.maps.Point(x, y),
 		                    latLng = overlay.getProjection().fromContainerPixelToLatLng(point);
-		                
-		                //console.log(e);
+
 		                google.maps.event.trigger(map, 'tapped', {latLng: latLng});
 		            }
 		        }
@@ -207,22 +197,8 @@ Ext.define('Reminder.view.geomap.GeoMap', {
 		});
 
 		google.maps.event.addListener(map, 'tapped', function(e) {
-		    //Add this point to the list of points
-		    //me.routePoints.push({lat: e.latLng.lat(), lng: e.latLng.lng()});
-		    
-		    //Update the lines on the map
-		    //me.displayRoute();
-		    
-		    //Calculate the distance etc
-		    //me.calculateStats();
-		    
-		    //Save the current trip details (for page reloads)
-		    //me.saveTrip();
-		    //console.log(me);
+
 		    container.fireEvent('gotPosition', container, e);
-
-
-		    //console.log( e.latLng.lat() + " " + e.latLng.lng() );
 		});
 	}
 });

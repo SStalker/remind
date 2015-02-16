@@ -69,10 +69,6 @@ Ext.define('Reminder.helper.Helper', {
 
         var me = this;
 
-        /*window.plugin.notification.local.hasPermission(function (granted) {
-          // console.log('Permission has been granted: ' + granted);
-        });*/
-
         var run = function () {
             Ext.create('Ext.util.DelayedTask', function () {
 
@@ -126,7 +122,7 @@ Ext.define('Reminder.helper.Helper', {
 
     checkGeoRemind: function( remind ) {
         // console.log('checkGeoReminds');
-        //console.log(remind);
+        // console.log(remind);
 
         var placeStore = Ext.getStore('Places');
 
@@ -254,9 +250,6 @@ Ext.define('Reminder.helper.Helper', {
         );
     },
 
-    /*
-        http://stackoverflow.com/questions/1502590/calculate-distance-between-two-points-in-google-maps-v3
-    */
     rad: function(x) {
         return x * Math.PI / 180;
     },
